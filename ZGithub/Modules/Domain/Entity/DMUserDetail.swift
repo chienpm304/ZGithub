@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct DMUserDetail: Identifiable {
+    let id: UserID
+    let username: String
+    let name: String
+    let avatarURL: String
+    let blogURL: String
+    let location: String
+    let followers: Int
+    let following: Int
+
+}
