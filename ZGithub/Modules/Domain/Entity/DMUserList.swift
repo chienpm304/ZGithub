@@ -13,9 +13,11 @@ struct DMUserList {
 }
 
 struct DMUserBrief: Identifiable {
-    let id: UserID
+    let userID: UserID
     let username: String
     let name: String
     let avatarURL: String
     let blogURL: String
+
+    var id: UserID { userID }
 }

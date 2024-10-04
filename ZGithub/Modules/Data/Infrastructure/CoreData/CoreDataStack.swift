@@ -13,7 +13,7 @@ public final class CoreDataStack {
     public static let testInstance = CoreDataStack()
 
     private let inMemory: Bool
-    private let modelName = "ZModel"
+    private let modelName = "ZGithubModel"
 
     private var coreDataBundle: Bundle {
         Bundle(for: CoreDataStack.self)

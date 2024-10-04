@@ -9,5 +9,8 @@
 import Foundation
 
 enum StorageError: Error {
-    
+    case notFound
+    case fetchError(Error)
+    case saveError(Error)
+    case unknown(Error)
 }

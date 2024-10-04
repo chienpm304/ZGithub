@@ -39,7 +39,7 @@ extension DefaultUserRepository: UserRepository {
         return userListDomain
     }
 
-    func getCachedUserDetail(username: String) async throws -> DMUserDetail? {
+    func getCachedUserDetail(username: String) async throws -> DMUserDetail {
         try await storage.fetchUserDetail(username: username)
     }
 

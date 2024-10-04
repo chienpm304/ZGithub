@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias UserID = Int
+typealias UserID = Int64

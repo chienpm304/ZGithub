@@ -8,7 +8,7 @@
 import Foundation
 
 struct UserDetailResponse: Codable {
-    let id: Int
+    let userID: UserID
     let login: String
     let name: String
     let avatarURL: String
@@ -18,7 +18,7 @@ struct UserDetailResponse: Codable {
     let following: Int
 
     enum CodingKeys: String, CodingKey {
-        case id
+        case userID = "id"
         case login
         case name
         case avatarURL = "avatar_url"
@@ -32,7 +32,7 @@ struct UserDetailResponse: Codable {
 extension UserDetailResponse {
     func toDomain() -> DMUserDetail {
         DMUserDetail(
-            id: id,
+            userID: userID,
             username: login,
             name: name,
             avatarURL: avatarURL,

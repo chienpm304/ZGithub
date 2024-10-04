@@ -2,10 +2,15 @@
 - XCode 15.2
 - Support iOS 13+
 
+# How to install:
+- Pull the code
+- Open `ZGithub.xcodeproj`, build and run.
 
 # High level design:
 - Using Clean architecture and MVVM with Coordinator for the Presentation.
-Data Layer -> Domain Layer <- Presentation.
+```
+Data Layer -> Domain Layer <- Presentation
+```
 
 # Low level design: 
 ## Domain layer
@@ -21,8 +26,7 @@ Data Layer -> Domain Layer <- Presentation.
     + Pull remote data from server (to get up-to-date data), save to local storage, and finally update on screen.
 
 - Local storage: CoreData
-    + Data model:
-    <image here>
+    + Data model: single CDUser entity to store the githut user info. User info in user list api actually a portion of the detail user info, so we can use a single entity to store user info.
     + Simple core data stack setup with single mainContext.
     + Read/write tasks will be executed in background queue and return to mainContext via callback/async continuation.
 
@@ -30,16 +34,30 @@ Data Layer -> Domain Layer <- Presentation.
 - Presentation have no connection to Data layer, get data via Domain layer via use-cases.
 - Apply MVVM pattern for each feature (user list and user detail screens).
 - With the vision of scalable app, we extract the navigation flow away from the view model to the coordinator.
+```
+         Coordinator
+              ^
+              |
+UseCase <- ViewModel <-> View
+              |
+              v 
+            Model
+```
 
 # Development area & Discussion:
 ## Further improvement:
+
 1. Extract /Domain /Data to standalone modules for better development interation.
+
 2. Image loading: 
 - Can have more optimal image management like: image caching at memory and disk, cancallable image requests, ... 
+
 3. Network request:
 - Currently we pull data from and public api service, so no worries about the security, but when we need to access company api, need more security network infrastructure, we can use any Networking library like Alamofier or Moya and simply write adapters to connect 3th networking with current networking logic simple via conformming the `NetworkingProtocol`.
-- Currently I assume that we need to fetch 
+- Currently I assume that we need to fetch
+
 4. Database: 
+- Can use [mogenerator](https://github.com/rentzsch/mogenerator) to generate core data entity class for fully type-safe.
 - Can apply more advanced CoreData stack pattern in case we need more complex and heavy read/write operations. E.g: persistent store <- private context <- main context <- child context.
 - Replace the CoreData with other database like Realm simply by implement the Storage protocols.
 
@@ -67,7 +85,3 @@ Data Layer -> Domain Layer <- Presentation.
     + Cons:
         + Complex development, more expensive maintaince cost.
         + Introduce more edge-case to handle when load more.
-
-# How to install:
-- Pull the code
-- Run `pod intall --repo-update` for first time or just simply `pod install` if you know all dependencies are available in your machine.

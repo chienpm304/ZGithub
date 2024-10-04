@@ -13,7 +13,7 @@ protocol UserRepository {
 
     func fetchUserList(pageSize: Int, offsetBy userID: UserID) async throws -> DMUserList
 
-    func getCachedUserDetail(username: String) async throws -> DMUserDetail?
+    func getCachedUserDetail(username: String) async throws -> DMUserDetail
 
     func fetchUserDetail(username: String) async throws -> DMUserDetail
 }

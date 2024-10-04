@@ -31,16 +31,17 @@
 		7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */; };
 		7E86A4B02CB0339A00D5956B /* GetUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AF2CB0339A00D5956B /* GetUserListUseCase.swift */; };
 		7E86A4B22CB033A200D5956B /* GetUserDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B12CB033A200D5956B /* GetUserDetailUseCase.swift */; };
-		7E86A4B42CB0342B00D5956B /* GithubEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B32CB0342B00D5956B /* GithubEndpointFactory.swift */; };
+		7E86A4B42CB0342B00D5956B /* UserEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B32CB0342B00D5956B /* UserEndpointFactory.swift */; };
 		7E86A4B62CB0348C00D5956B /* DMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B52CB0348C00D5956B /* DMError.swift */; };
-		7E86A4B82CB034A100D5956B /* DMUserBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B72CB034A100D5956B /* DMUserBrief.swift */; };
 		7E86A4BA2CB034AA00D5956B /* DMUserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B92CB034AA00D5956B /* DMUserDetail.swift */; };
 		7E86A4BC2CB034BF00D5956B /* DMUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4BB2CB034BF00D5956B /* DMUserList.swift */; };
-		7E86A4BE2CB034D400D5956B /* UserDetailRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4BD2CB034D400D5956B /* UserDetailRespository.swift */; };
-		7E86A4C02CB034DB00D5956B /* UserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4BF2CB034DB00D5956B /* UserListRepository.swift */; };
-		7E86A4C22CB035AD00D5956B /* DefaultUserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4C12CB035AD00D5956B /* DefaultUserListRepository.swift */; };
-		7E86A4C42CB035D100D5956B /* DefaultUserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4C32CB035D100D5956B /* DefaultUserDetailRepository.swift */; };
+		7E86A4C02CB034DB00D5956B /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4BF2CB034DB00D5956B /* UserRepository.swift */; };
+		7E86A4C22CB035AD00D5956B /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4C12CB035AD00D5956B /* DefaultUserRepository.swift */; };
 		7E86A4C62CB0363300D5956B /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4C52CB0363300D5956B /* StorageError.swift */; };
+		7E86A4C82CB03B0400D5956B /* TypeDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4C72CB03B0400D5956B /* TypeDefines.swift */; };
+		7E86A4CB2CB04C3200D5956B /* ZGithubModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4C92CB04C3200D5956B /* ZGithubModel.xcdatamodeld */; };
+		7EEC55162CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55152CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift */; };
+		7EEC55182CB0E62A00B2B867 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7EEC55172CB0E62A00B2B867 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,16 +82,18 @@
 		7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUseCase.swift; sourceTree = "<group>"; };
 		7E86A4AF2CB0339A00D5956B /* GetUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListUseCase.swift; sourceTree = "<group>"; };
 		7E86A4B12CB033A200D5956B /* GetUserDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDetailUseCase.swift; sourceTree = "<group>"; };
-		7E86A4B32CB0342B00D5956B /* GithubEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpointFactory.swift; sourceTree = "<group>"; };
+		7E86A4B32CB0342B00D5956B /* UserEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpointFactory.swift; sourceTree = "<group>"; };
 		7E86A4B52CB0348C00D5956B /* DMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMError.swift; sourceTree = "<group>"; };
-		7E86A4B72CB034A100D5956B /* DMUserBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUserBrief.swift; sourceTree = "<group>"; };
 		7E86A4B92CB034AA00D5956B /* DMUserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUserDetail.swift; sourceTree = "<group>"; };
 		7E86A4BB2CB034BF00D5956B /* DMUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUserList.swift; sourceTree = "<group>"; };
-		7E86A4BD2CB034D400D5956B /* UserDetailRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRespository.swift; sourceTree = "<group>"; };
-		7E86A4BF2CB034DB00D5956B /* UserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRepository.swift; sourceTree = "<group>"; };
-		7E86A4C12CB035AD00D5956B /* DefaultUserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserListRepository.swift; sourceTree = "<group>"; };
-		7E86A4C32CB035D100D5956B /* DefaultUserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailRepository.swift; sourceTree = "<group>"; };
+		7E86A4BF2CB034DB00D5956B /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		7E86A4C12CB035AD00D5956B /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
 		7E86A4C52CB0363300D5956B /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		7E86A4C72CB03B0400D5956B /* TypeDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDefines.swift; sourceTree = "<group>"; };
+		7E86A4CA2CB04C3200D5956B /* ZGithubModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZGithubModel.xcdatamodel; sourceTree = "<group>"; };
+		7E86A4CC2CB04EDB00D5956B /* ZGithubModelV1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZGithubModelV1.xcdatamodel; sourceTree = "<group>"; };
+		7EEC55152CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		7EEC55172CB0E62A00B2B867 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 		7E86A41A2CB0307900D5956B /* ZGithub */ = {
 			isa = PBXGroup;
 			children = (
+				7EEC55172CB0E62A00B2B867 /* README.md */,
 				7E86A4292CB0307B00D5956B /* Info.plist */,
 				7E86A45D2CB031C200D5956B /* Resources */,
 				7E86A4512CB031A000D5956B /* Application */,
@@ -198,8 +202,8 @@
 		7E86A4622CB0323E00D5956B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				7E86A4C72CB03B0400D5956B /* TypeDefines.swift */,
 				7E86A4B52CB0348C00D5956B /* DMError.swift */,
-				7E86A4B72CB034A100D5956B /* DMUserBrief.swift */,
 				7E86A4B92CB034AA00D5956B /* DMUserDetail.swift */,
 				7E86A4BB2CB034BF00D5956B /* DMUserList.swift */,
 			);
@@ -209,8 +213,7 @@
 		7E86A4652CB0323E00D5956B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				7E86A4BD2CB034D400D5956B /* UserDetailRespository.swift */,
-				7E86A4BF2CB034DB00D5956B /* UserListRepository.swift */,
+				7E86A4BF2CB034DB00D5956B /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -247,6 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				7E86A46B2CB0323E00D5956B /* CoreDataStack.swift */,
+				7EEC55152CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift */,
+				7E86A4C92CB04C3200D5956B /* ZGithubModel.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -321,7 +326,7 @@
 			children = (
 				7E86A4802CB0323E00D5956B /* UserDetail */,
 				7E86A4822CB0323E00D5956B /* UserList */,
-				7E86A4B32CB0342B00D5956B /* GithubEndpointFactory.swift */,
+				7E86A4B32CB0342B00D5956B /* UserEndpointFactory.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -329,8 +334,7 @@
 		7E86A4872CB0323E00D5956B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				7E86A4C12CB035AD00D5956B /* DefaultUserListRepository.swift */,
-				7E86A4C32CB035D100D5956B /* DefaultUserDetailRepository.swift */,
+				7E86A4C12CB035AD00D5956B /* DefaultUserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -427,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEC55182CB0E62A00B2B867 /* README.md in Resources */,
 				7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */,
 				7E86A4282CB0307B00D5956B /* Base in Resources */,
 			);
@@ -457,25 +462,25 @@
 				7E86A45A2CB031A000D5956B /* AppFlowCoordinator.swift in Sources */,
 				7E86A4952CB0323E00D5956B /* APIEndpoint.swift in Sources */,
 				7E86A4AA2CB0335300D5956B /* UserStorage.swift in Sources */,
-				7E86A4C22CB035AD00D5956B /* DefaultUserListRepository.swift in Sources */,
+				7E86A4C22CB035AD00D5956B /* DefaultUserRepository.swift in Sources */,
 				7E86A4B62CB0348C00D5956B /* DMError.swift in Sources */,
 				7E86A4A42CB032E500D5956B /* CDUser+Mapping.swift in Sources */,
 				7E86A4962CB0323E00D5956B /* APIError.swift in Sources */,
+				7E86A4CB2CB04C3200D5956B /* ZGithubModel.xcdatamodeld in Sources */,
 				7E86A4592CB031A000D5956B /* AppDelegate.swift in Sources */,
 				7E86A4BA2CB034AA00D5956B /* DMUserDetail.swift in Sources */,
 				7E86A49E2CB0323E00D5956B /* UserDetailResponse+Mapping.swift in Sources */,
-				7E86A4B82CB034A100D5956B /* DMUserBrief.swift in Sources */,
-				7E86A4B42CB0342B00D5956B /* GithubEndpointFactory.swift in Sources */,
+				7E86A4B42CB0342B00D5956B /* UserEndpointFactory.swift in Sources */,
 				7E86A4C62CB0363300D5956B /* StorageError.swift in Sources */,
 				7E86A4B22CB033A200D5956B /* GetUserDetailUseCase.swift in Sources */,
-				7E86A4C42CB035D100D5956B /* DefaultUserDetailRepository.swift in Sources */,
 				7E86A4582CB031A000D5956B /* AppConfiguration.swift in Sources */,
+				7E86A4C82CB03B0400D5956B /* TypeDefines.swift in Sources */,
 				7E86A4AC2CB0336400D5956B /* UserCoreDataStorage.swift in Sources */,
 				7E86A4BC2CB034BF00D5956B /* DMUserList.swift in Sources */,
-				7E86A4BE2CB034D400D5956B /* UserDetailRespository.swift in Sources */,
+				7EEC55162CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				7E86A4942CB0323E00D5956B /* APIConfig.swift in Sources */,
 				7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */,
-				7E86A4C02CB034DB00D5956B /* UserListRepository.swift in Sources */,
+				7E86A4C02CB034DB00D5956B /* UserRepository.swift in Sources */,
 				7E86A4572CB031A000D5956B /* AppDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +759,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7E86A4C92CB04C3200D5956B /* ZGithubModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7E86A4CC2CB04EDB00D5956B /* ZGithubModelV1.xcdatamodel */,
+				7E86A4CA2CB04C3200D5956B /* ZGithubModel.xcdatamodel */,
+			);
+			currentVersion = 7E86A4CC2CB04EDB00D5956B /* ZGithubModelV1.xcdatamodel */;
+			name = ZGithubModel.xcdatamodeld;
+			path = /Users/thytrangg/Documents/GitHub/ZGithub/ZGithub/Modules/Data/Infrastructure/CoreData/ZGithubModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7E86A4102CB0307900D5956B /* Project object */;
 }

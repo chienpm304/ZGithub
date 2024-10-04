@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UserEndpointFactory {
-    func makeUserListEndpoint(pageSize: Int, offsetID: Int) -> APIEndpoint
+    func makeUserListEndpoint(pageSize: Int, offsetID: UserID) -> APIEndpoint
     func makeUserDetailEndpoint(username: String) -> APIEndpoint
 }
 
@@ -20,7 +20,7 @@ struct GithubUserEndpointFactory: UserEndpointFactory {
         self.config = config
     }
 
-    func makeUserListEndpoint(pageSize: Int, offsetID: Int) -> APIEndpoint {
+    func makeUserListEndpoint(pageSize: Int, offsetID: UserID) -> APIEndpoint {
         let queryItems = [
             URLQueryItem(name: "per_page", value: String(pageSize)),
             URLQueryItem(name: "since", value: String(offsetID))

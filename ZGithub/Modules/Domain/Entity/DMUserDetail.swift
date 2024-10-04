@@ -9,7 +9,7 @@
 import Foundation
 
 struct DMUserDetail: Identifiable {
-    let id: UserID
+    let userID: UserID
     let username: String
     let name: String
     let avatarURL: String
@@ -18,4 +18,5 @@ struct DMUserDetail: Identifiable {
     let followers: Int
     let following: Int
 
+    var id: UserID { userID }
 }
