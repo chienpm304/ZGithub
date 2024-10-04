@@ -10,11 +10,10 @@ import Foundation
 struct UserDetailResponse: Codable {
     let id: Int
     let login: String
-    let name: String?
-    let company: String?
-    let bio: String?
-    let location: String?
-    let publicRepos: Int
+    let name: String
+    let avatarURL: String
+    let htmlURL: String
+    let location: String
     let followers: Int
     let following: Int
 
@@ -22,11 +21,25 @@ struct UserDetailResponse: Codable {
         case id
         case login
         case name
-        case company
-        case bio
+        case avatarURL = "avatar_url"
+        case htmlURL = "html_url"
         case location
-        case publicRepos = "public_repos"
         case followers
         case following
+    }
+}
+
+extension UserDetailResponse {
+    func toDomain() -> DMUserDetail {
+        DMUserDetail(
+            id: id,
+            username: login,
+            name: name,
+            avatarURL: avatarURL,
+            blogURL: htmlURL,
+            location: location,
+            followers: followers,
+            following: following
+        )
     }
 }
