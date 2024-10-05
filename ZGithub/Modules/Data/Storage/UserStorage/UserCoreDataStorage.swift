@@ -22,7 +22,7 @@ extension UserCoreDataStorage: UserStorage {
         try await coreData.performBackgroundTask { context in
             do {
                 let request: NSFetchRequest = CDUser.fetchRequest()
-                request.predicate = NSPredicate(format: "userID >= %@", userID as CVarArg)
+                request.predicate = NSPredicate(format: "userID >= %ld", userID)
                 request.sortDescriptors = [
                     NSSortDescriptor(key: #keyPath(CDUser.userID), ascending: true)
                 ]

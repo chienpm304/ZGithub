@@ -16,7 +16,6 @@ extension CDUser {
         DMUserBrief(
             userID: userID,
             username: username ?? "",
-            name: name ?? "",
             avatarURL: avatarURL ?? "",
             blogURL: blogURL ?? ""
         )
@@ -30,7 +29,6 @@ extension CDUser {
     func update(withUserBrief userBrief: DMUserBrief) {
         self.userID = userBrief.id
         self.username = userBrief.username
-        self.name = userBrief.name
         self.avatarURL = userBrief.avatarURL
         self.blogURL = userBrief.blogURL
     }

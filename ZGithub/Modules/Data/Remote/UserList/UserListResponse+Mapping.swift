@@ -24,15 +24,13 @@ extension UserListResponse {
 
 struct UserBriefResponse: Codable {
     let userID: UserID
-    let login: String
-    let name: String
+    let username: String
     let avatarURL: String
     let htmlURL: String
 
     enum CodingKeys: String, CodingKey {
         case userID = "id"
-        case login
-        case name
+        case username = "login"
         case avatarURL = "avatar_url"
         case htmlURL = "html_url"
     }
@@ -42,8 +40,7 @@ extension UserBriefResponse {
     func toDomain() -> DMUserBrief {
         DMUserBrief(
             userID: userID,
-            username: login,
-            name: name,
+            username: username,
             avatarURL: avatarURL,
             blogURL: htmlURL
         )

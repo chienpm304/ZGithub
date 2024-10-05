@@ -9,5 +9,11 @@
 import Foundation
 
 final class AppConfiguration {
-    let githubBaseURL = URL(string: "https://api.github.com/")!
+    private let githubBaseURL = URL(string: "https://api.github.com")!
+    
+    lazy var githubAPIConfig: GithubAPIConfig = GithubAPIConfig(baseURL: githubBaseURL)
+}
+
+struct GithubAPIConfig: APIConfig {
+    let baseURL: URL
 }

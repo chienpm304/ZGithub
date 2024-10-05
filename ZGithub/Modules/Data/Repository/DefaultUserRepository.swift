@@ -11,16 +11,16 @@ import Foundation
 final class DefaultUserRepository {
     private let apiClient: APIProtocol
     private let userEndpointFactory: UserEndpointFactory
-    private let storage: UserStorage
+    private let userStorage: UserStorage
 
     init(
         apiClient: APIProtocol,
         userEndpointFactory: UserEndpointFactory,
-        storage: UserStorage
+        userStorage: UserStorage
     ) {
         self.apiClient = apiClient
         self.userEndpointFactory = userEndpointFactory
-        self.storage = storage
+        self.userStorage = userStorage
     }
 }
 
@@ -28,26 +28,26 @@ final class DefaultUserRepository {
 
 extension DefaultUserRepository: UserRepository {
     func getCachedUserList(pageSize: Int, offsetBy userID: UserID) async throws -> DMUserList {
-        try await storage.fetchUserList(pageSize: pageSize, offsetBy: userID)
+        try await userStorage.fetchUserList(pageSize: pageSize, offsetBy: userID)
     }
 
     func fetchUserList(pageSize: Int, offsetBy userID: UserID) async throws -> DMUserList {
         let endpoint = userEndpointFactory.makeUserListEndpoint(pageSize: pageSize, offsetID: userID)
         let userList: UserListResponse = try await apiClient.request(endpoint: endpoint)
         let userListDomain = userList.toDomain()
-        try await storage.saveUserList(userListDomain)
+        try await userStorage.saveUserList(userListDomain)
         return userListDomain
     }
 
     func getCachedUserDetail(username: String) async throws -> DMUserDetail {
-        try await storage.fetchUserDetail(username: username)
+        try await userStorage.fetchUserDetail(username: username)
     }
 
     func fetchUserDetail(username: String) async throws -> DMUserDetail {
         let endpoint = userEndpointFactory.makeUserDetailEndpoint(username: username)
         let userDetail: UserDetailResponse = try await apiClient.request(endpoint: endpoint)
         let userDetailDomain = userDetail.toDomain()
-        try await storage.saveUserDetail(userDetailDomain)
+        try await userStorage.saveUserDetail(userDetailDomain)
         return userDetailDomain
     }
 }

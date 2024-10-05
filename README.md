@@ -1,6 +1,6 @@
 # Requirements:
 - XCode 15.2
-- Support iOS 13+
+- Support iOS 15+
 
 # How to install:
 - Pull the code
@@ -49,8 +49,8 @@ UseCase <- ViewModel <-> View
 
 1. Extract /Domain /Data to standalone modules for better development interation.
 
-2. Image loading: 
-- Can have more optimal image management like: image caching at memory and disk, cancallable image requests, ... 
+2. Image loading:
+- Currently we use SwifUI AsyncImage, which might not optimal. We can write a custom image loader which include image caching at memory and disk, cancallable image requests, ...
 
 3. Network request:
 - Currently we pull data from and public api service, so no worries about the security, but when we need to access company api, need more security network infrastructure, we can use any Networking library like Alamofier or Moya and simply write adapters to connect 3th networking with current networking logic simple via conformming the `NetworkingProtocol`.

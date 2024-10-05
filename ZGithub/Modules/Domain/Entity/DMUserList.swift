@@ -12,10 +12,9 @@ struct DMUserList {
     let users: [DMUserBrief]
 }
 
-struct DMUserBrief: Identifiable {
+struct DMUserBrief: Identifiable, Hashable {
     let userID: UserID
     let username: String
-    let name: String
     let avatarURL: String
     let blogURL: String
 

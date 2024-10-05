@@ -11,6 +11,7 @@ import UIKit
 final class AppFlowCoordinator {
     var window: UIWindow
     private let appDIContainer: AppDIContainer
+    private var navigationController: UINavigationController?
 
     init(
         window: UIWindow,
@@ -21,12 +22,12 @@ final class AppFlowCoordinator {
     }
 
     func start() {
-//        let mainSceneDIContainer = appDIContainer.makeMainSceneDIContainer()
-//        let mainFlow = mainSceneDIContainer.makeTabViewSceneFlowCoodinator(
-//            window: window
-//        )
-//        mainFlow.start()
-        window.rootViewController = ViewController()
+        let navigationController = UINavigationController()
+        let mainSceneDIContainer = appDIContainer.makeUserListSceneDIContainer()
+        let mainFlow = mainSceneDIContainer.makeUserListSceneFlowCoordinator(from: navigationController)
+        mainFlow.start()
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        self.navigationController = navigationController
     }
 }
