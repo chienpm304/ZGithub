@@ -51,6 +51,10 @@
 		7EEC55342CB0F5B900B2B867 /* UserListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55332CB0F5B900B2B867 /* UserListItemModel.swift */; };
 		7EEC55362CB0FFE900B2B867 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55352CB0FFE900B2B867 /* UserListView.swift */; };
 		7EEC553B2CB109B000B2B867 /* UserListSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC553A2CB109B000B2B867 /* UserListSceneDIContainer.swift */; };
+		7EEC553E2CB164A400B2B867 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7EEC553D2CB164A400B2B867 /* NukeUI */; };
+		7EEC55412CB1878C00B2B867 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55402CB1878C00B2B867 /* Color+Extensions.swift */; };
+		7EEC55432CB18EB100B2B867 /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55422CB18EB100B2B867 /* UserAvatarView.swift */; };
+		7EEC55462CB18F6C00B2B867 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55452CB18F6C00B2B867 /* UserRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +116,9 @@
 		7EEC55332CB0F5B900B2B867 /* UserListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItemModel.swift; sourceTree = "<group>"; };
 		7EEC55352CB0FFE900B2B867 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		7EEC553A2CB109B000B2B867 /* UserListSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListSceneDIContainer.swift; sourceTree = "<group>"; };
+		7EEC55402CB1878C00B2B867 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		7EEC55422CB18EB100B2B867 /* UserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
+		7EEC55452CB18F6C00B2B867 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEC553E2CB164A400B2B867 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,8 @@
 		7E86A4552CB031A000D5956B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7EEC55442CB18F5200B2B867 /* ViewComponents */,
+				7EEC553F2CB1878200B2B867 /* Shared */,
 				7EEC55232CB0F34C00B2B867 /* UserList */,
 				7EEC552C2CB0F3A500B2B867 /* UserDetail */,
 			);
@@ -473,6 +483,23 @@
 			path = UserDetail;
 			sourceTree = "<group>";
 		};
+		7EEC553F2CB1878200B2B867 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC55402CB1878C00B2B867 /* Color+Extensions.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7EEC55442CB18F5200B2B867 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC55422CB18EB100B2B867 /* UserAvatarView.swift */,
+				7EEC55452CB18F6C00B2B867 /* UserRowView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +517,7 @@
 			);
 			name = ZGithub;
 			packageProductDependencies = (
+				7EEC553D2CB164A400B2B867 /* NukeUI */,
 			);
 			productName = ZGithub;
 			productReference = 7E86A4182CB0307900D5956B /* ZGithub.app */;
@@ -542,6 +570,7 @@
 			);
 			mainGroup = 7E86A40F2CB0307900D5956B;
 			packageReferences = (
+				7EEC553C2CB164A300B2B867 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 7E86A4192CB0307900D5956B /* Products */;
 			projectDirPath = "";
@@ -590,6 +619,7 @@
 				7EEC55322CB0F52500B2B867 /* UserListModel.swift in Sources */,
 				7E86A45B2CB031A000D5956B /* SceneDelegate.swift in Sources */,
 				7EEC55362CB0FFE900B2B867 /* UserListView.swift in Sources */,
+				7EEC55462CB18F6C00B2B867 /* UserRowView.swift in Sources */,
 				7E86A45A2CB031A000D5956B /* AppFlowCoordinator.swift in Sources */,
 				7E86A4952CB0323E00D5956B /* APIEndpoint.swift in Sources */,
 				7EEC552E2CB0F3BA00B2B867 /* UserListFlowCoordinator.swift in Sources */,
@@ -612,9 +642,11 @@
 				7E86A4AC2CB0336400D5956B /* UserCoreDataStorage.swift in Sources */,
 				7E86A4BC2CB034BF00D5956B /* DMUserList.swift in Sources */,
 				7EEC55162CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				7EEC55432CB18EB100B2B867 /* UserAvatarView.swift in Sources */,
 				7E86A4942CB0323E00D5956B /* APIConfig.swift in Sources */,
 				7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */,
 				7E86A4C02CB034DB00D5956B /* UserRepository.swift in Sources */,
+				7EEC55412CB1878C00B2B867 /* Color+Extensions.swift in Sources */,
 				7EEC551A2CB0F17800B2B867 /* FetchPagingUserListUseCase.swift in Sources */,
 				7EEC55202CB0F23200B2B867 /* UserDetailUseCaseFactory.swift in Sources */,
 				7E86A4572CB031A000D5956B /* AppDIContainer.swift in Sources */,
@@ -897,6 +929,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7EEC553C2CB164A300B2B867 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7EEC553D2CB164A400B2B867 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EEC553C2CB164A300B2B867 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7E86A4C92CB04C3200D5956B /* ZGithubModel.xcdatamodeld */ = {

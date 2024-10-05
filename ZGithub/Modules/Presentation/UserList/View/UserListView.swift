@@ -3,12 +3,14 @@
 //  ZGithub
 //
 //  Created by Chien Pham on 5/10/24.
-//  
+//
 //
 
 import SwiftUI
+import NukeUI
 
 struct UserListView: View {
+    @Environment(\.openURL) var openURL
     @ObservedObject private var viewModel: UserListViewModel
 
     init(viewModel: UserListViewModel) {
@@ -18,40 +20,31 @@ struct UserListView: View {
     var body: some View {
         VStack {
             List {
-                Section {
-                    ForEach(viewModel.dataModel.itemModels) { user in
-                        HStack {
-                            Button {
-                                viewModel.didTapUserListItem(user)
-                            } label: {
-                                HStack {
-                                    AsyncImage(url: URL(string: user.avatarURL)) { image in
-                                        image
-                                            .frame(width: 120, height: 120)
-                                    } placeholder: {
-                                        Image(.icDefaultAvatar)
-                                            .frame(width: 120, height: 120)
-                                    }
-                                    .frame(width: 128, height: 128)
-                                    .border(.gray)
-
-                                    VStack {
-                                        Text(user.name)
-                                            .foregroundColor(.primary)
-                                        Divider()
-                                        Text(user.blogURL) // TODO: generic view
-                                            .foregroundStyle(Color.blue)
-                                    }
-                                }
-                            }
+                ForEach(viewModel.dataModel.itemModels) { user in
+                    UserRowView(
+                        avatarURL: user.avatarURL,
+                        title: user.name
+                    ) {
+                        if let blogURL = URL(string: user.blogURL) {
+                            Link(user.blogURL, destination: blogURL)
+                                .foregroundStyle(Color.blue)
+                                .font(.callout)
+                        } else {
+                            Text(user.blogURL)
+                                .underline()
+                                .foregroundStyle(Color.blue)
+                                .font(.callout)
                         }
+                    }
+                    .onTapGesture {
+                        viewModel.didTapUserListItem(user)
                     }
                 }
             }
+            .listStyle(.plain)
         }
         .navigationTitle("Github Users")
         .navigationBarTitleDisplayMode(.inline)
-//        .resultAlert(alertData: $viewModel.alertData)
         .task {
             await viewModel.onViewAppear()
         }

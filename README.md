@@ -1,6 +1,8 @@
 # Requirements:
 - XCode 15.2
 - Support iOS 15+
+- Third party libraries:
+    + [NukeUI](https://github.com/kean/Nuke) loads and displays images from multiple sources with simple APIs, utilizing powerful image processing and efficient caching..
 
 # How to install:
 - Pull the code
@@ -47,16 +49,13 @@ UseCase <- ViewModel <-> View
 # Development area & Discussion:
 ## Further improvement:
 
-1. Extract /Domain /Data to standalone modules for better development interation.
+###. Extract /Domain /Data to standalone modules for better development interation.
 
-2. Image loading:
-- Currently we use SwifUI AsyncImage, which might not optimal. We can write a custom image loader which include image caching at memory and disk, cancallable image requests, ...
-
-3. Network request:
+###. Network request:
 - Currently we pull data from and public api service, so no worries about the security, but when we need to access company api, need more security network infrastructure, we can use any Networking library like Alamofier or Moya and simply write adapters to connect 3th networking with current networking logic simple via conformming the `NetworkingProtocol`.
 - Currently I assume that we need to fetch
 
-4. Database: 
+###. Database: 
 - Can use [mogenerator](https://github.com/rentzsch/mogenerator) to generate core data entity class for fully type-safe.
 - Can apply more advanced CoreData stack pattern in case we need more complex and heavy read/write operations. E.g: persistent store <- private context <- main context <- child context.
 - Replace the CoreData with other database like Realm simply by implement the Storage protocols.
