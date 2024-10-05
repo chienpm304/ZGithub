@@ -36,10 +36,19 @@ struct UserListView: View {
                                 .font(.callout)
                         }
                     }
+                    .listRowSeparator(.hidden)
                     .onTapGesture {
                         viewModel.didTapUserListItem(user)
                     }
+                    .onAppear {
+                        Task { @MainActor in
+                            await viewModel.onAppearUserListItem(user)
+                        }
+                    }
                 }
+
+                footerView
+                    .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
         }
@@ -47,6 +56,28 @@ struct UserListView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await viewModel.onViewAppear()
+        }
+    }
+
+    @ViewBuilder
+    private var footerView: some View {
+        HStack {
+            Spacer()
+            if viewModel.isLoading {
+                Text("Loading...")
+                    .font(.callout)
+                    .foregroundStyle(Color.gray)
+            } else if !viewModel.hasMore {
+                Text("You've reached the viewing limit. Upgrade to preview more 😊")
+                    .font(.callout)
+                    .foregroundStyle(Color.gray)
+            } else {
+                Text("Something went wrong!!")
+                    .font(.callout)
+                    .foregroundStyle(Color.red)
+            }
+
+            Spacer()
         }
     }
 }
