@@ -29,8 +29,8 @@
 		7E86A4AA2CB0335300D5956B /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4A92CB0335300D5956B /* UserStorage.swift */; };
 		7E86A4AC2CB0336400D5956B /* UserCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AB2CB0336400D5956B /* UserCoreDataStorage.swift */; };
 		7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */; };
-		7E86A4B02CB0339A00D5956B /* GetUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AF2CB0339A00D5956B /* GetUserListUseCase.swift */; };
-		7E86A4B22CB033A200D5956B /* GetUserDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B12CB033A200D5956B /* GetUserDetailUseCase.swift */; };
+		7E86A4B02CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AF2CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift */; };
+		7E86A4B22CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B12CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift */; };
 		7E86A4B42CB0342B00D5956B /* UserEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B32CB0342B00D5956B /* UserEndpointFactory.swift */; };
 		7E86A4B62CB0348C00D5956B /* DMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B52CB0348C00D5956B /* DMError.swift */; };
 		7E86A4BA2CB034AA00D5956B /* DMUserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B92CB034AA00D5956B /* DMUserDetail.swift */; };
@@ -42,6 +42,10 @@
 		7E86A4CB2CB04C3200D5956B /* ZGithubModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4C92CB04C3200D5956B /* ZGithubModel.xcdatamodeld */; };
 		7EEC55162CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55152CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift */; };
 		7EEC55182CB0E62A00B2B867 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7EEC55172CB0E62A00B2B867 /* README.md */; };
+		7EEC551A2CB0F17800B2B867 /* FetchPagingUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55192CB0F17800B2B867 /* FetchPagingUserListUseCase.swift */; };
+		7EEC551C2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC551B2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift */; };
+		7EEC55202CB0F23200B2B867 /* UserDetailUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC551F2CB0F23200B2B867 /* UserDetailUseCaseFactory.swift */; };
+		7EEC55222CB0F2A000B2B867 /* UserListUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC55212CB0F2A000B2B867 /* UserListUseCaseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +84,8 @@
 		7E86A4A92CB0335300D5956B /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		7E86A4AB2CB0336400D5956B /* UserCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreDataStorage.swift; sourceTree = "<group>"; };
 		7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUseCase.swift; sourceTree = "<group>"; };
-		7E86A4AF2CB0339A00D5956B /* GetUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListUseCase.swift; sourceTree = "<group>"; };
-		7E86A4B12CB033A200D5956B /* GetUserDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDetailUseCase.swift; sourceTree = "<group>"; };
+		7E86A4AF2CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedPagingUserListUseCase.swift; sourceTree = "<group>"; };
+		7E86A4B12CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedUserDetailByUsernameUseCase.swift; sourceTree = "<group>"; };
 		7E86A4B32CB0342B00D5956B /* UserEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpointFactory.swift; sourceTree = "<group>"; };
 		7E86A4B52CB0348C00D5956B /* DMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMError.swift; sourceTree = "<group>"; };
 		7E86A4B92CB034AA00D5956B /* DMUserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUserDetail.swift; sourceTree = "<group>"; };
@@ -94,6 +98,10 @@
 		7E86A4CC2CB04EDB00D5956B /* ZGithubModelV1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZGithubModelV1.xcdatamodel; sourceTree = "<group>"; };
 		7EEC55152CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		7EEC55172CB0E62A00B2B867 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		7EEC55192CB0F17800B2B867 /* FetchPagingUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPagingUserListUseCase.swift; sourceTree = "<group>"; };
+		7EEC551B2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserDetailByUsernameUseCase.swift; sourceTree = "<group>"; };
+		7EEC551F2CB0F23200B2B867 /* UserDetailUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailUseCaseFactory.swift; sourceTree = "<group>"; };
+		7EEC55212CB0F2A000B2B867 /* UserListUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUseCaseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,9 +237,9 @@
 		7E86A4692CB0323E00D5956B /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7EEC551E2CB0F21800B2B867 /* UserDetail */,
+				7EEC551D2CB0F21200B2B867 /* UserList */,
 				7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */,
-				7E86A4AF2CB0339A00D5956B /* GetUserListUseCase.swift */,
-				7E86A4B12CB033A200D5956B /* GetUserDetailUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -350,6 +358,26 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		7EEC551D2CB0F21200B2B867 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				7E86A4AF2CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift */,
+				7EEC55192CB0F17800B2B867 /* FetchPagingUserListUseCase.swift */,
+				7EEC55212CB0F2A000B2B867 /* UserListUseCaseFactory.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		7EEC551E2CB0F21800B2B867 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7E86A4B12CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift */,
+				7EEC551B2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift */,
+				7EEC551F2CB0F23200B2B867 /* UserDetailUseCaseFactory.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,9 +481,10 @@
 			files = (
 				7E86A4912CB0323E00D5956B /* CoreDataStack.swift in Sources */,
 				7E86A49F2CB0323E00D5956B /* UserListResponse+Mapping.swift in Sources */,
-				7E86A4B02CB0339A00D5956B /* GetUserListUseCase.swift in Sources */,
+				7E86A4B02CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift in Sources */,
 				7E86A4972CB0323E00D5956B /* APIProtocol.swift in Sources */,
 				7E86A4932CB0323E00D5956B /* APIClient.swift in Sources */,
+				7EEC551C2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift in Sources */,
 				7E86A4922CB0323E00D5956B /* MockAPIClient.swift in Sources */,
 				7E86A45C2CB031A000D5956B /* ViewController.swift in Sources */,
 				7E86A45B2CB031A000D5956B /* SceneDelegate.swift in Sources */,
@@ -470,9 +499,10 @@
 				7E86A4592CB031A000D5956B /* AppDelegate.swift in Sources */,
 				7E86A4BA2CB034AA00D5956B /* DMUserDetail.swift in Sources */,
 				7E86A49E2CB0323E00D5956B /* UserDetailResponse+Mapping.swift in Sources */,
+				7EEC55222CB0F2A000B2B867 /* UserListUseCaseFactory.swift in Sources */,
 				7E86A4B42CB0342B00D5956B /* UserEndpointFactory.swift in Sources */,
 				7E86A4C62CB0363300D5956B /* StorageError.swift in Sources */,
-				7E86A4B22CB033A200D5956B /* GetUserDetailUseCase.swift in Sources */,
+				7E86A4B22CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift in Sources */,
 				7E86A4582CB031A000D5956B /* AppConfiguration.swift in Sources */,
 				7E86A4C82CB03B0400D5956B /* TypeDefines.swift in Sources */,
 				7E86A4AC2CB0336400D5956B /* UserCoreDataStorage.swift in Sources */,
@@ -481,6 +511,8 @@
 				7E86A4942CB0323E00D5956B /* APIConfig.swift in Sources */,
 				7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */,
 				7E86A4C02CB034DB00D5956B /* UserRepository.swift in Sources */,
+				7EEC551A2CB0F17800B2B867 /* FetchPagingUserListUseCase.swift in Sources */,
+				7EEC55202CB0F23200B2B867 /* UserDetailUseCaseFactory.swift in Sources */,
 				7E86A4572CB031A000D5956B /* AppDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
