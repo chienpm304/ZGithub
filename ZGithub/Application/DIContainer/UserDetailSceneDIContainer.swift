@@ -34,7 +34,7 @@ final class UserDetailSceneDIContainer {
         return GithubUserEndpointFactory(config: apiConfig)
     } ()
 
-    lazy var userRepository: UserRepository = DefaultUserRepository(
+    lazy var userDetailRepository: UserDetailRepository = DefaultUserDetailRepository(
         apiClient: dependencies.apiClient,
         userEndpointFactory: userEndpointFactory,
         userStorage: userStorage
@@ -76,11 +76,11 @@ extension UserDetailSceneDIContainer: UserDetailFlowCoordinatorDependencies {
     // MARK: UseCase
 
     func makeGetCachedUserDetailByUsernameUseCase() -> GetCachedUserDetailByUsernameUseCase {
-        GetCachedUserDetailByUsernameUseCase(repository: userRepository)
+        GetCachedUserDetailByUsernameUseCase(repository: userDetailRepository)
     }
 
     func makeFetchUserDetailByUsernameUseCase() -> FetchUserDetailByUsernameUseCase {
-        FetchUserDetailByUsernameUseCase(repository: userRepository)
+        FetchUserDetailByUsernameUseCase(repository: userDetailRepository)
     }
 
     func makeFormatFollowCountUseCase() -> FormatFollowCountUseCase {

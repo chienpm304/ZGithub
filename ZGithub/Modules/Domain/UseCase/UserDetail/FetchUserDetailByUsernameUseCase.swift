@@ -14,9 +14,9 @@ final class FetchUserDetailByUsernameUseCase: AsyncUseCase {
     }
     typealias Output = DMUserDetail
 
-    private let repository: UserRepository
+    private let repository: UserDetailRepository
 
-    init(repository: UserRepository) {
+    init(repository: UserDetailRepository) {
         self.repository = repository
     }
 

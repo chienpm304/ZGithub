@@ -15,9 +15,9 @@ final class GetCachedPagingUserListUseCase: AsyncUseCase {
     }
     typealias Output = DMUserList
 
-    private let repository: UserRepository
+    private let repository: UserListRepository
 
-    init(repository: UserRepository) {
+    init(repository: UserListRepository) {
         self.repository = repository
     }
 

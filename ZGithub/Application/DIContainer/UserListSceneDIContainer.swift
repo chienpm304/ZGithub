@@ -35,7 +35,7 @@ final class UserListSceneDIContainer {
         return GithubUserEndpointFactory(config: apiConfig)
     } ()
 
-    lazy var userRepository: UserRepository = DefaultUserRepository(
+    lazy var userListRepository: UserListRepository = DefaultUserListRepository(
         apiClient: dependencies.apiClient,
         userEndpointFactory: userEndpointFactory,
         userStorage: userStorage
@@ -90,10 +90,10 @@ extension UserListSceneDIContainer: UserListFlowCoordinatorDependencies {
     // MARK: UseCase
 
     func makeGetCachedPagingUserListUseCase() -> GetCachedPagingUserListUseCase {
-        GetCachedPagingUserListUseCase(repository: userRepository)
+        GetCachedPagingUserListUseCase(repository: userListRepository)
     }
 
     func makeFetchPagingUserListUseCase() -> FetchPagingUserListUseCase {
-        FetchPagingUserListUseCase(repository: userRepository)
+        FetchPagingUserListUseCase(repository: userListRepository)
     }
 }

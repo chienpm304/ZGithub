@@ -19,13 +19,13 @@ struct UserDetailResponse: Codable {
 
     enum CodingKeys: String, CodingKey {
         case userID = "id"
-        case login
-        case name
+        case login = "login"
+        case name = "name"
         case avatarURL = "avatar_url"
         case htmlURL = "html_url"
-        case location
-        case followers
-        case following
+        case location = "location"
+        case followers = "followers"
+        case following = "following"
     }
 }
 
