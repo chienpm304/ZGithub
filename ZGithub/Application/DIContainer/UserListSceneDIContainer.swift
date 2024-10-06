@@ -3,7 +3,7 @@
 //  ZGithub
 //
 //  Created by Chien Pham on 5/10/24.
-//  
+//
 //
 
 import Foundation
@@ -15,6 +15,7 @@ final class UserListSceneDIContainer {
         let appConfiguration: AppConfiguration
         let coreDataStack: CoreDataStack
         let apiClient: APIProtocol
+        let userDetailDIContainer: UserDetailSceneDIContainer
     }
 
     private let dependencies: Dependencies
@@ -39,7 +40,7 @@ final class UserListSceneDIContainer {
         userEndpointFactory: userEndpointFactory,
         userStorage: userStorage
     )
-    
+
     // MARK: Flow
 
     func makeUserListSceneFlowCoordinator(
@@ -57,9 +58,21 @@ extension UserListSceneDIContainer: UserListFlowCoordinatorDependencies {
         let viewModel = makeUserListViewModel(actions: actions)
         let view = UserListView(viewModel: viewModel)
         let viewController = UIHostingController(rootView: view)
-        viewController.hidesBottomBarWhenPushed = true
         return viewController
     }
+
+    func makeUserDetailFlowCoordinator(
+        from navigationController: UINavigationController,
+        input: UserDetailFlowCoordinator.Input
+    ) -> UserDetailFlowCoordinator {
+        dependencies
+            .userDetailDIContainer
+            .makeUserDetailSceneFlowCoordinator(
+                from: navigationController,
+                input: input
+            )
+    }
+
 
     // MARK: ViewModel
 
@@ -73,7 +86,7 @@ extension UserListSceneDIContainer: UserListFlowCoordinatorDependencies {
         )
         return UserListViewModel(dependencies: dependencies)
     }
-
+    
     // MARK: UseCase
 
     func makeGetCachedPagingUserListUseCase() -> GetCachedPagingUserListUseCase {

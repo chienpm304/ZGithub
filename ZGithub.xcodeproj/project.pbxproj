@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E017F062CB2420C00D0D77E /* UserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F052CB2420C00D0D77E /* UserDetailModel.swift */; };
+		7E017F082CB2456B00D0D77E /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F072CB2456B00D0D77E /* UserDetailViewModel.swift */; };
+		7E017F0A2CB2535D00D0D77E /* UserDetailFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F092CB2535D00D0D77E /* UserDetailFlowCoordinator.swift */; };
+		7E017F0C2CB254BE00D0D77E /* UserDetailSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F0B2CB254BE00D0D77E /* UserDetailSceneDIContainer.swift */; };
+		7E017F0E2CB255CE00D0D77E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F0D2CB255CE00D0D77E /* UserDetailView.swift */; };
+		7E017F102CB2836B00D0D77E /* FollowCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F0F2CB2836A00D0D77E /* FollowCountView.swift */; };
+		7E017F122CB2877300D0D77E /* FormatFollowCountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F112CB2877300D0D77E /* FormatFollowCountUseCase.swift */; };
+		7E017F152CB2886500D0D77E /* SyncUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F142CB2886500D0D77E /* SyncUseCase.swift */; };
 		7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4242CB0307B00D5956B /* Assets.xcassets */; };
 		7E86A4282CB0307B00D5956B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4272CB0307B00D5956B /* Base */; };
 		7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4322CB0307B00D5956B /* ZGithubTests.swift */; };
@@ -68,6 +76,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E017F052CB2420C00D0D77E /* UserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailModel.swift; sourceTree = "<group>"; };
+		7E017F072CB2456B00D0D77E /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		7E017F092CB2535D00D0D77E /* UserDetailFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailFlowCoordinator.swift; sourceTree = "<group>"; };
+		7E017F0B2CB254BE00D0D77E /* UserDetailSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailSceneDIContainer.swift; sourceTree = "<group>"; };
+		7E017F0D2CB255CE00D0D77E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		7E017F0F2CB2836A00D0D77E /* FollowCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCountView.swift; sourceTree = "<group>"; };
+		7E017F112CB2877300D0D77E /* FormatFollowCountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatFollowCountUseCase.swift; sourceTree = "<group>"; };
+		7E017F142CB2886500D0D77E /* SyncUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUseCase.swift; sourceTree = "<group>"; };
 		7E86A4182CB0307900D5956B /* ZGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E86A4242CB0307B00D5956B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E86A4272CB0307B00D5956B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E017F132CB2885B00D0D77E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */,
+				7E017F142CB2886500D0D77E /* SyncUseCase.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		7E86A40F2CB0307900D5956B = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +208,7 @@
 			children = (
 				7E86A44B2CB031A000D5956B /* AppDIContainer.swift */,
 				7EEC553A2CB109B000B2B867 /* UserListSceneDIContainer.swift */,
+				7E017F0B2CB254BE00D0D77E /* UserDetailSceneDIContainer.swift */,
 			);
 			path = DIContainer;
 			sourceTree = "<group>";
@@ -259,9 +285,9 @@
 		7E86A4692CB0323E00D5956B /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7E017F132CB2885B00D0D77E /* Base */,
 				7EEC551E2CB0F21800B2B867 /* UserDetail */,
 				7EEC551D2CB0F21200B2B867 /* UserList */,
-				7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -396,6 +422,7 @@
 				7E86A4B12CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift */,
 				7EEC551B2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift */,
 				7EEC551F2CB0F23200B2B867 /* UserDetailUseCaseFactory.swift */,
+				7E017F112CB2877300D0D77E /* FormatFollowCountUseCase.swift */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -447,6 +474,7 @@
 		7EEC55282CB0F3A500B2B867 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				7E017F092CB2535D00D0D77E /* UserDetailFlowCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -454,6 +482,7 @@
 		7EEC55292CB0F3A500B2B867 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7E017F052CB2420C00D0D77E /* UserDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +490,8 @@
 		7EEC552A2CB0F3A500B2B867 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7E017F0D2CB255CE00D0D77E /* UserDetailView.swift */,
+				7E017F0F2CB2836A00D0D77E /* FollowCountView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,6 +499,7 @@
 		7EEC552B2CB0F3A500B2B867 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7E017F072CB2456B00D0D77E /* UserDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -475,10 +507,10 @@
 		7EEC552C2CB0F3A500B2B867 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
-				7EEC55282CB0F3A500B2B867 /* Coordinator */,
 				7EEC55292CB0F3A500B2B867 /* Model */,
 				7EEC552A2CB0F3A500B2B867 /* View */,
 				7EEC552B2CB0F3A500B2B867 /* ViewModel */,
+				7EEC55282CB0F3A500B2B867 /* Coordinator */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -616,8 +648,13 @@
 				7E86A4932CB0323E00D5956B /* APIClient.swift in Sources */,
 				7EEC551C2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift in Sources */,
 				7E86A4922CB0323E00D5956B /* MockAPIClient.swift in Sources */,
+				7E017F0C2CB254BE00D0D77E /* UserDetailSceneDIContainer.swift in Sources */,
 				7EEC55322CB0F52500B2B867 /* UserListModel.swift in Sources */,
+				7E017F152CB2886500D0D77E /* SyncUseCase.swift in Sources */,
 				7E86A45B2CB031A000D5956B /* SceneDelegate.swift in Sources */,
+				7E017F102CB2836B00D0D77E /* FollowCountView.swift in Sources */,
+				7E017F122CB2877300D0D77E /* FormatFollowCountUseCase.swift in Sources */,
+				7E017F062CB2420C00D0D77E /* UserDetailModel.swift in Sources */,
 				7EEC55362CB0FFE900B2B867 /* UserListView.swift in Sources */,
 				7EEC55462CB18F6C00B2B867 /* UserRowView.swift in Sources */,
 				7E86A45A2CB031A000D5956B /* AppFlowCoordinator.swift in Sources */,
@@ -633,6 +670,8 @@
 				7E86A4592CB031A000D5956B /* AppDelegate.swift in Sources */,
 				7E86A4BA2CB034AA00D5956B /* DMUserDetail.swift in Sources */,
 				7E86A49E2CB0323E00D5956B /* UserDetailResponse+Mapping.swift in Sources */,
+				7E017F0E2CB255CE00D0D77E /* UserDetailView.swift in Sources */,
+				7E017F082CB2456B00D0D77E /* UserDetailViewModel.swift in Sources */,
 				7EEC55222CB0F2A000B2B867 /* UserListUseCaseFactory.swift in Sources */,
 				7E86A4B42CB0342B00D5956B /* UserEndpointFactory.swift in Sources */,
 				7E86A4C62CB0363300D5956B /* StorageError.swift in Sources */,
@@ -641,6 +680,7 @@
 				7E86A4C82CB03B0400D5956B /* TypeDefines.swift in Sources */,
 				7E86A4AC2CB0336400D5956B /* UserCoreDataStorage.swift in Sources */,
 				7E86A4BC2CB034BF00D5956B /* DMUserList.swift in Sources */,
+				7E017F0A2CB2535D00D0D77E /* UserDetailFlowCoordinator.swift in Sources */,
 				7EEC55162CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				7EEC55432CB18EB100B2B867 /* UserAvatarView.swift in Sources */,
 				7E86A4942CB0323E00D5956B /* APIConfig.swift in Sources */,

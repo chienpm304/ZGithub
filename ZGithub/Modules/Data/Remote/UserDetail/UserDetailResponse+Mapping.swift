@@ -10,12 +10,12 @@ import Foundation
 struct UserDetailResponse: Codable {
     let userID: UserID
     let login: String
-    let name: String
+    let name: String?
     let avatarURL: String
     let htmlURL: String
-    let location: String
-    let followers: Int
-    let following: Int
+    let location: String?
+    let followers: Int?
+    let following: Int?
 
     enum CodingKeys: String, CodingKey {
         case userID = "id"

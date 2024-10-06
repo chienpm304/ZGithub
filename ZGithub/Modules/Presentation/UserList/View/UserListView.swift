@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import NukeUI
 
 struct UserListView: View {
     @Environment(\.openURL) var openURL

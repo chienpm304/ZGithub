@@ -84,7 +84,7 @@ extension UserCoreDataStorage: UserStorage {
         try await coreData.performBackgroundTask { context in
             do {
                 let fetchRequest = CDUser.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "userID == %@", userDetail.userID)
+                fetchRequest.predicate = NSPredicate(format: "userID == %ld", userDetail.userID)
 
                 let fetchedUsers = try context.fetch(fetchRequest)
                 if let user = fetchedUsers.first {

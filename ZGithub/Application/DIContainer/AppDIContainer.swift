@@ -22,8 +22,18 @@ final class AppDIContainer {
         let dependencies = UserListSceneDIContainer.Dependencies(
             appConfiguration: appConfiguration,
             coreDataStack: coreDataStack,
-            apiClient: apiClient
+            apiClient: apiClient,
+            userDetailDIContainer: userDetailSceneDIContainer
         )
         return UserListSceneDIContainer(dependencies: dependencies)
     }
+
+    lazy var userDetailSceneDIContainer: UserDetailSceneDIContainer = {
+        let dependencies = UserDetailSceneDIContainer.Dependencies(
+            appConfiguration: appConfiguration,
+            coreDataStack: coreDataStack,
+            apiClient: apiClient
+        )
+        return UserDetailSceneDIContainer(dependencies: dependencies)
+    }()
 }

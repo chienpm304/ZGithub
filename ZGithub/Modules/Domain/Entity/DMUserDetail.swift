@@ -11,12 +11,12 @@ import Foundation
 struct DMUserDetail: Identifiable {
     let userID: UserID
     let username: String
-    let name: String
+    let name: String?
     let avatarURL: String
     let blogURL: String
-    let location: String
-    let followers: Int
-    let following: Int
+    let location: String?
+    let followers: Int?
+    let following: Int?
 
     var id: UserID { userID }
 }

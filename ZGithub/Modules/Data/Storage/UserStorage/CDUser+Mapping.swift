@@ -62,7 +62,7 @@ extension CDUser {
         self.avatarURL = userDetail.avatarURL
         self.blogURL = userDetail.blogURL
         self.location = userDetail.location
-        self.followers = Int32(userDetail.followers)
-        self.following = Int32(userDetail.following)
+        self.followers = Int32(userDetail.followers ?? 0)
+        self.following = Int32(userDetail.following ?? 0)
     }
 }

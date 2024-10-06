@@ -11,3 +11,5 @@ import Foundation
 typealias GetCachedUserDetailByUsernameUseCaseFactory = () -> GetCachedUserDetailByUsernameUseCase
 
 typealias FetchUserDetailByUsernameUseCaseFactory = () -> FetchUserDetailByUsernameUseCase
+
+typealias FormatFollowCountUseCaseFactory = () -> FormatFollowCountUseCase

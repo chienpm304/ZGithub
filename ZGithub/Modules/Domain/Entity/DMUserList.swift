@@ -20,3 +20,18 @@ struct DMUserBrief: Identifiable, Hashable {
 
     var id: UserID { userID }
 }
+
+extension DMUserBrief {
+    func toUserDetail() -> DMUserDetail {
+        DMUserDetail(
+            userID: userID,
+            username: username,
+            name: username.capitalized,
+            avatarURL: avatarURL,
+            blogURL: blogURL,
+            location: "",
+            followers: 0,
+            following: 0
+        )
+    }
+}
