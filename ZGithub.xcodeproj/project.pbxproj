@@ -18,6 +18,8 @@
 		7E017F232CB292DB00D0D77E /* UserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F222CB292DB00D0D77E /* UserListRepository.swift */; };
 		7E017F252CB2930800D0D77E /* UserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F242CB2930800D0D77E /* UserDetailRepository.swift */; };
 		7E017F272CB2935C00D0D77E /* DefaultUserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F262CB2935C00D0D77E /* DefaultUserDetailRepository.swift */; };
+		7E017F2D2CB29FC300D0D77E /* ImageCacheConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F2C2CB29FC300D0D77E /* ImageCacheConfig.swift */; };
+		7E017F2F2CB29FDA00D0D77E /* GithubAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F2E2CB29FDA00D0D77E /* GithubAPIConfig.swift */; };
 		7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4242CB0307B00D5956B /* Assets.xcassets */; };
 		7E86A4282CB0307B00D5956B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4272CB0307B00D5956B /* Base */; };
 		7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4322CB0307B00D5956B /* ZGithubTests.swift */; };
@@ -89,6 +91,8 @@
 		7E017F222CB292DB00D0D77E /* UserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRepository.swift; sourceTree = "<group>"; };
 		7E017F242CB2930800D0D77E /* UserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepository.swift; sourceTree = "<group>"; };
 		7E017F262CB2935C00D0D77E /* DefaultUserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailRepository.swift; sourceTree = "<group>"; };
+		7E017F2C2CB29FC300D0D77E /* ImageCacheConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheConfig.swift; sourceTree = "<group>"; };
+		7E017F2E2CB29FDA00D0D77E /* GithubAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIConfig.swift; sourceTree = "<group>"; };
 		7E86A4182CB0307900D5956B /* ZGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E86A4242CB0307B00D5956B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E86A4272CB0307B00D5956B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -255,6 +259,15 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		7E017F2B2CB29FB500D0D77E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				7E017F2C2CB29FC300D0D77E /* ImageCacheConfig.swift */,
+				7E017F2E2CB29FDA00D0D77E /* GithubAPIConfig.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		7E86A40F2CB0307900D5956B = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +322,7 @@
 		7E86A4512CB031A000D5956B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				7E017F2B2CB29FB500D0D77E /* Configuration */,
 				7E86A44C2CB031A000D5956B /* DIContainer */,
 				7E86A44D2CB031A000D5956B /* AppConfiguration.swift */,
 				7E86A44E2CB031A000D5956B /* AppDelegate.swift */,
@@ -748,6 +762,7 @@
 				7E86A45A2CB031A000D5956B /* AppFlowCoordinator.swift in Sources */,
 				7E86A4952CB0323E00D5956B /* APIEndpoint.swift in Sources */,
 				7EEC552E2CB0F3BA00B2B867 /* UserListFlowCoordinator.swift in Sources */,
+				7E017F2F2CB29FDA00D0D77E /* GithubAPIConfig.swift in Sources */,
 				7E86A4AA2CB0335300D5956B /* UserStorage.swift in Sources */,
 				7EEC55342CB0F5B900B2B867 /* UserListItemModel.swift in Sources */,
 				7E86A4C22CB035AD00D5956B /* DefaultUserListRepository.swift in Sources */,
@@ -771,6 +786,7 @@
 				7E017F0A2CB2535D00D0D77E /* UserDetailFlowCoordinator.swift in Sources */,
 				7EEC55162CB0E34C00B2B867 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				7EEC55432CB18EB100B2B867 /* UserAvatarView.swift in Sources */,
+				7E017F2D2CB29FC300D0D77E /* ImageCacheConfig.swift in Sources */,
 				7E86A4942CB0323E00D5956B /* APIConfig.swift in Sources */,
 				7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */,
 				7EEC55412CB1878C00B2B867 /* Color+Extensions.swift in Sources */,
