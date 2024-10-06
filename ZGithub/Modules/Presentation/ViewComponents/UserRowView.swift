@@ -36,6 +36,7 @@ struct UserRowView<Content: View>: View {
                 Divider()
 
                 extraContent?()
+                    .padding(.vertical, 4)
             }
         }
         .padding(12)

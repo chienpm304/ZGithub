@@ -41,10 +41,10 @@ extension CDUser {
         DMUserDetail(
             userID: userID,
             username: username ?? "",
-            name: name ?? "",
+            name: name,
             avatarURL: avatarURL ?? "",
             blogURL: blogURL ?? "",
-            location: location ?? "",
+            location: location,
             followers: Int(followers),
             following: Int(following)
         )

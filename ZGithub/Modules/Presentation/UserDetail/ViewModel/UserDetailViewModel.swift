@@ -79,7 +79,7 @@ extension UserDetailViewModel {
         )
         let getCachedUseCase = dependencies.getCachedUserDetailUseCaseFactory()
         let cachedUserDetail = try await getCachedUseCase.execute(input: requestCacheInput)
-        setDataModel(with: cachedUserDetail)
+        updateDataModel(with: cachedUserDetail)
         print("[ZGithub] loaded from cached \(cachedUserDetail)")
     }
 
@@ -90,12 +90,12 @@ extension UserDetailViewModel {
         )
         let fetchUseCase = dependencies.fetchUserDetailUseCaseFactory()
         let remoteUserDetail = try await fetchUseCase.execute(input: fetchInput)
-        setDataModel(with: remoteUserDetail)
+        updateDataModel(with: remoteUserDetail)
         print("[ZGithub] loaded from remote \(remoteUserDetail)")
     }
 
     @MainActor
-    private func setDataModel(with userDetail: DMUserDetail) {
+    private func updateDataModel(with userDetail: DMUserDetail) {
         dataModel = UserDetailModel(userDetail: userDetail)
     }
 }
