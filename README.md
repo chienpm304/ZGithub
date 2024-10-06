@@ -40,7 +40,7 @@ Data Layer -> Domain Layer <- Presentation
          Coordinator
               ^
               |
-UseCase <- ViewModel <-> View
+UseCase <- ViewModel <- View
               |
               v 
             Model
@@ -52,8 +52,8 @@ UseCase <- ViewModel <-> View
 ###. Extract /Domain /Data to standalone modules for better development interation.
 
 ###. Network request:
-- Currently we pull data from and public api service, so no worries about the security, but when we need to access company api, need more security network infrastructure, we can use any Networking library like Alamofier or Moya and simply write adapters to connect 3th networking with current networking logic simple via conformming the `NetworkingProtocol`.
-- Currently I assume that we need to fetch
+- Currently we pull data from and public api service, so no worries about the security, but when we need to access company api, need more security network infrastructure, we can use any Networking library like Alamofier or Moya and simply write adapters to connect 3th networking with current networking logic simple via conformming the `APIProtocol`.
+- Currently I didn't handle network monitoring and retry fetch user list when the network is back (only can continue load more when user scroll to bottom).
 
 ###. Database: 
 - Can use [mogenerator](https://github.com/rentzsch/mogenerator) to generate core data entity class for fully type-safe.
