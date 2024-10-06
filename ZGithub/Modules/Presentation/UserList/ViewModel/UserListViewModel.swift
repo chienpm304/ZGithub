@@ -30,7 +30,7 @@ final class UserListViewModel: ObservableObject {
     private(set) var isLoading: Bool
 
     @Published
-    private(set) var dataModel: UserListModel
+    private var dataModel: UserListModel
 
     // MARK: Initializer
 
@@ -44,9 +44,13 @@ final class UserListViewModel: ObservableObject {
     }
 
     // MARK: Public
-    
+
     var hasMore: Bool {
         dataModel.users.count < totalLimit
+    }
+
+    var itemModels: [UserListItemModel] {
+        dataModel.itemModels
     }
 
     @MainActor
@@ -56,14 +60,14 @@ final class UserListViewModel: ObservableObject {
         await loadMore(pageSize: pageSize, offset: currentOffsetID)
     }
 
-    @MainActor 
+    @MainActor
     func onAppearUserListItem(_ item: UserListItemModel) async {
         if item.id == dataModel.lastUser?.id {
             await loadMore(pageSize: pageSize, offset: currentOffsetID)
         }
     }
 
-    @MainActor 
+    @MainActor
     func didTapUserListItem(_ item: UserListItemModel) {
         guard let selectedUser = dataModel.getUser(by: item.id) else {
             assertionFailure()
@@ -71,9 +75,11 @@ final class UserListViewModel: ObservableObject {
         }
         dependencies.actions?.didTapUser(selectedUser)
     }
+}
 
-    // MARK: Private
+// MARK: Private
 
+extension UserListViewModel {
     @MainActor
     private func loadMore(pageSize: Int, offset: UserID) async {
         guard isLoading == false, hasMore else { return }

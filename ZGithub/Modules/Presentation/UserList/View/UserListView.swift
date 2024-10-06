@@ -20,7 +20,7 @@ struct UserListView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(viewModel.dataModel.itemModels) { user in
+                ForEach(viewModel.itemModels) { user in
                     UserRowView(
                         avatarURL: user.avatarURL,
                         title: user.name
