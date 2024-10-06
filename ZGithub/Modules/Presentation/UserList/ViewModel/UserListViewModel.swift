@@ -89,14 +89,8 @@ extension UserListViewModel {
             try await loadUserListFromCache(pageSize, offset)
             try await loadUserListFromRemote(pageSize, offset)
             isLoading = false
-            if let lastUser = dataModel.lastUser {
-                currentOffsetID = lastUser.userID + 1
-            }
         } catch {
             isLoading = false
-            if let lastUser = dataModel.lastUser {
-                currentOffsetID = lastUser.userID + 1
-            }
             print("[ZGithub] load more offset: \(offset), error: \(error)")
         }
     }
@@ -109,16 +103,24 @@ extension UserListViewModel {
         )
         let getCachedUseCase = dependencies.getCachedPagingUserListUseCaseFactory()
         let cachedUserList = try await getCachedUseCase.execute(input: requestCacheInput)
-        dataModel.appendUniqueUserList(cachedUserList)
+        updateDataModel(cachedUserList)
         print("[ZGithub] loaded from cached \(cachedUserList.users.map { $0.userID })")
     }
-
+    
     @MainActor
     private func loadUserListFromRemote(_ pageSize: Int, _ offset: UserID) async throws {
         let fetchInput = FetchPagingUserListUseCase.Input(pageSize: pageSize, fromUserID: offset)
         let fetchUseCase = dependencies.fetchPagingUserListUseCaseFactory()
         let remoteUserList = try await fetchUseCase.execute(input: fetchInput)
-        dataModel.appendUniqueUserList(remoteUserList)
+        updateDataModel(remoteUserList)
         print("[ZGithub] loaded from remote \(remoteUserList.users.map { $0.userID })")
+    }
+
+    @MainActor
+    private func updateDataModel(_ userList: DMUserList) {
+        dataModel.appendUniqueUserList(userList)
+        if let nextOffsetID = userList.nextOffsetID {
+            currentOffsetID = nextOffsetID
+        }
     }
 }

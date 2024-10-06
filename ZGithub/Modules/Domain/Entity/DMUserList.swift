@@ -10,6 +10,19 @@ import Foundation
 
 struct DMUserList {
     let users: [DMUserBrief]
+    let nextOffsetID: UserID?
+
+    init(users: [DMUserBrief], nextOffsetID: UserID? = nil) {
+        self.users = users
+        
+        if let nextOffsetID {
+            self.nextOffsetID = nextOffsetID
+        } else if let lastUserID = users.last?.userID {
+            self.nextOffsetID = lastUserID + 1
+        } else {
+            self.nextOffsetID = nil
+        }
+    }
 }
 
 struct DMUserBrief: Identifiable, Hashable {
