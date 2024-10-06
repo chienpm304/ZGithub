@@ -22,7 +22,7 @@ struct UserListView: View {
                 ForEach(viewModel.itemModels) { user in
                     UserRowView(
                         avatarURL: user.avatarURL,
-                        title: user.name
+                        title: viewModel.formatUsername(username: user.username)
                     ) {
                         if let blogURL = URL(string: user.blogURL) {
                             Link(user.blogURL, destination: blogURL)

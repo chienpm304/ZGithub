@@ -10,13 +10,13 @@ import Foundation
 
 struct UserListItemModel: Identifiable {
     let id: UserID
-    let name: String
+    let username: String
     let avatarURL: String
     let blogURL: String
 
     init(userBrief: DMUserBrief) {
         id = userBrief.userID
-        name = userBrief.username.capitalized
+        username = userBrief.username
         avatarURL = userBrief.avatarURL
         blogURL = userBrief.blogURL
     }

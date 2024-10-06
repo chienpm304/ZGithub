@@ -35,7 +35,11 @@ final class UserDetailViewModel: ObservableObject {
     // MARK: Public
 
     var displayName: String {
-        dataModel.name ?? dataModel.username.capitalized
+        dataModel.name ?? "@\(dataModel.username)"
+    }
+
+    var username: String {
+        "@\(dataModel.username)"
     }
 
     var followers: Int {

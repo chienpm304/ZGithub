@@ -44,6 +44,10 @@ final class UserListViewModel: ObservableObject {
     }
 
     // MARK: Public
+    
+    func formatUsername(username: String) -> String {
+        "@".appending(username)
+    }
 
     var hasMore: Bool {
         dataModel.users.count < totalLimit

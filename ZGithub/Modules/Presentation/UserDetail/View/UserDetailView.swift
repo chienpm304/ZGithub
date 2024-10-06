@@ -19,6 +19,7 @@ struct UserDetailView: View {
         VStack(alignment: .leading, spacing: 20) {
             userInfoSection
             followSection
+            usernameSection
             blogSection
             Spacer()
         }
@@ -79,6 +80,16 @@ struct UserDetailView: View {
             .fontWeight(.semibold)
 
         Text(viewModel.dataModel.blogURL)
+            .foregroundStyle(Color.gray)
+    }
+
+    @ViewBuilder
+    private var usernameSection: some View {
+        Text("Username")
+            .font(.title2)
+            .fontWeight(.semibold)
+
+        Text(viewModel.username)
             .foregroundStyle(Color.gray)
     }
 }
