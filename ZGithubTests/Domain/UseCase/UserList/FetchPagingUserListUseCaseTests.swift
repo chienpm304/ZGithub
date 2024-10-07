@@ -123,14 +123,15 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
         // Given
         repository.fetchUserListResult = .failure(TestError.fetch)
 
-        // When
-        let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
-
-        // Then
         do {
+            // When
+            let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
             _ = try await useCase.execute(input: input)
+
+            // Then
             XCTFail("Expected error to be thrown")
         } catch {
+            // Then
             XCTAssertEqual(error as? TestError, TestError.fetch)
         }
     }

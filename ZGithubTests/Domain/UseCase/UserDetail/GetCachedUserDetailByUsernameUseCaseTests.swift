@@ -63,11 +63,14 @@ final class GetCachedUserDetailByUsernameUseCaseTests: XCTestCase {
         // Given
         repository.cachedUserDetailResult = .failure(TestError.getCache)
 
-        // When & Then
         do {
+            // When
             _ = try await useCase.execute(input: .init(username: "username"))
+
+            // Then
             XCTFail("Expected error to be thrown")
         } catch {
+            // Then
             XCTAssertEqual(error as? TestError, .getCache)
         }
     }
@@ -76,14 +79,15 @@ final class GetCachedUserDetailByUsernameUseCaseTests: XCTestCase {
         // Given
         repository.cachedUserDetailResult = .failure(TestError.emptyUsername)
 
-        // When
-        let input = GetCachedUserDetailByUsernameUseCase.Input(username: "")
-
-        // Then
         do {
+            // When
+            let input = GetCachedUserDetailByUsernameUseCase.Input(username: "")
             _ = try await useCase.execute(input: input)
+
+            // Then
             XCTFail("Expected error to be thrown")
         } catch {
+            // Then
             XCTAssertEqual(error as? TestError, .emptyUsername)
         }
     }
