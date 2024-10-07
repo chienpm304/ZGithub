@@ -18,8 +18,11 @@
 		7E017F232CB292DB00D0D77E /* UserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F222CB292DB00D0D77E /* UserListRepository.swift */; };
 		7E017F252CB2930800D0D77E /* UserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F242CB2930800D0D77E /* UserDetailRepository.swift */; };
 		7E017F272CB2935C00D0D77E /* DefaultUserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F262CB2935C00D0D77E /* DefaultUserDetailRepository.swift */; };
+		7E017F2A2CB294AC00D0D77E /* MockUserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F292CB294AC00D0D77E /* MockUserListRepository.swift */; };
 		7E017F2D2CB29FC300D0D77E /* ImageCacheConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F2C2CB29FC300D0D77E /* ImageCacheConfig.swift */; };
 		7E017F2F2CB29FDA00D0D77E /* GithubAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F2E2CB29FDA00D0D77E /* GithubAPIConfig.swift */; };
+		7E71C6512CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6502CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift */; };
+		7E71C6532CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6522CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift */; };
 		7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4242CB0307B00D5956B /* Assets.xcassets */; };
 		7E86A4282CB0307B00D5956B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4272CB0307B00D5956B /* Base */; };
 		7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4322CB0307B00D5956B /* ZGithubTests.swift */; };
@@ -91,8 +94,11 @@
 		7E017F222CB292DB00D0D77E /* UserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRepository.swift; sourceTree = "<group>"; };
 		7E017F242CB2930800D0D77E /* UserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepository.swift; sourceTree = "<group>"; };
 		7E017F262CB2935C00D0D77E /* DefaultUserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailRepository.swift; sourceTree = "<group>"; };
+		7E017F292CB294AC00D0D77E /* MockUserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserListRepository.swift; sourceTree = "<group>"; };
 		7E017F2C2CB29FC300D0D77E /* ImageCacheConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheConfig.swift; sourceTree = "<group>"; };
 		7E017F2E2CB29FDA00D0D77E /* GithubAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIConfig.swift; sourceTree = "<group>"; };
+		7E71C6502CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatFollowCountUseCaseTests.swift; sourceTree = "<group>"; };
+		7E71C6522CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedPagingUserListUseCaseTests.swift; sourceTree = "<group>"; };
 		7E86A4182CB0307900D5956B /* ZGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E86A4242CB0307B00D5956B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E86A4272CB0307B00D5956B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 		7E017F1A2CB2914E00D0D77E /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				7E017F282CB2949C00D0D77E /* Mock */,
 				7E017F1C2CB2915C00D0D77E /* UserList */,
 				7E017F1B2CB2915600D0D77E /* UserDetail */,
 			);
@@ -216,6 +223,7 @@
 		7E017F1B2CB2915600D0D77E /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				7E71C6502CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 		7E017F1C2CB2915C00D0D77E /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				7E71C6522CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -255,6 +264,14 @@
 			isa = PBXGroup;
 			children = (
 				7E86A46D2CB0323E00D5956B /* MockAPIClient.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		7E017F282CB2949C00D0D77E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				7E017F292CB294AC00D0D77E /* MockUserListRepository.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -801,6 +818,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E017F2A2CB294AC00D0D77E /* MockUserListRepository.swift in Sources */,
+				7E71C6532CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift in Sources */,
 				7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */,
 				7E71C6512CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift in Sources */,
 			);
