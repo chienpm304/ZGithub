@@ -11,7 +11,7 @@ import XCTest
 
 final class FormatFollowCountUseCaseTests: XCTestCase {
 
-    var useCase: FormatFollowCountUseCase!
+    private var useCase: FormatFollowCountUseCase!
 
     override func setUpWithError() throws {
         try super.setUpWithError()

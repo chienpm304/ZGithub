@@ -8,12 +8,16 @@
 import Foundation
 @testable import ZGithub
 
-class MockAPIClient: APIProtocol {
-    var result: Result<Data, APIError>?
-    
+final class MockAPIClient: APIProtocol {
+    private enum MockError: Error {
+        case unxpected
+    }
+
+    var result: Result<Data, Error>?
+
     func request<T: Codable>(endpoint: APIEndpoint) async throws -> T {
         guard let result = result else {
-            throw APIError.unknown
+            throw MockError.unxpected
         }
         
         switch result {

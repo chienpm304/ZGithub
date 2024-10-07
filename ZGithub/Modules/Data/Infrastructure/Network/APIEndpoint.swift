@@ -19,7 +19,6 @@ struct APIEndpoint {
     let queryItems: [URLQueryItem]?
     let body: Data?
 
-
     init(
         baseURL: URL,
         path: String,

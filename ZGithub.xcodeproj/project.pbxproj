@@ -28,8 +28,11 @@
 		7E71C6582CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6572CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift */; };
 		7E71C65A2CB3ED1A006EEF9C /* MockUserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6592CB3ED1A006EEF9C /* MockUserDetailRepository.swift */; };
 		7E71C65C2CB3F545006EEF9C /* FetchUserDetailByUsernameUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C65B2CB3F545006EEF9C /* FetchUserDetailByUsernameUseCaseTests.swift */; };
+		7E71C6602CB3F795006EEF9C /* MockUserDetailStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C65F2CB3F795006EEF9C /* MockUserDetailStorage.swift */; };
 		7E71C6642CB40697006EEF9C /* UserListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6632CB40697006EEF9C /* UserListStorage.swift */; };
 		7E71C6662CB406A0006EEF9C /* UserListCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6652CB406A0006EEF9C /* UserListCoreDataStorage.swift */; };
+		7E71C6682CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6672CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift */; };
+		7E71C66A2CB425D0006EEF9C /* MockUserEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6692CB425D0006EEF9C /* MockUserEndpointFactory.swift */; };
 		7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4242CB0307B00D5956B /* Assets.xcassets */; };
 		7E86A4282CB0307B00D5956B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4272CB0307B00D5956B /* Base */; };
 		7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4322CB0307B00D5956B /* ZGithubTests.swift */; };
@@ -109,8 +112,11 @@
 		7E71C6572CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedUserDetailByUsernameUseCaseTests.swift; sourceTree = "<group>"; };
 		7E71C6592CB3ED1A006EEF9C /* MockUserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDetailRepository.swift; sourceTree = "<group>"; };
 		7E71C65B2CB3F545006EEF9C /* FetchUserDetailByUsernameUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserDetailByUsernameUseCaseTests.swift; sourceTree = "<group>"; };
+		7E71C65F2CB3F795006EEF9C /* MockUserDetailStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDetailStorage.swift; sourceTree = "<group>"; };
 		7E71C6632CB40697006EEF9C /* UserListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListStorage.swift; sourceTree = "<group>"; };
 		7E71C6652CB406A0006EEF9C /* UserListCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCoreDataStorage.swift; sourceTree = "<group>"; };
+		7E71C6672CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailRepositoryTests.swift; sourceTree = "<group>"; };
+		7E71C6692CB425D0006EEF9C /* MockUserEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserEndpointFactory.swift; sourceTree = "<group>"; };
 		7E86A4182CB0307900D5956B /* ZGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E86A4242CB0307B00D5956B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E86A4272CB0307B00D5956B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -262,6 +268,7 @@
 		7E017F1E2CB2916D00D0D77E /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				7E71C65D2CB3F77E006EEF9C /* Local */,
 				7E017F1F2CB2917300D0D77E /* Network */,
 			);
 			path = Infrastructure;
@@ -279,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				7E86A46D2CB0323E00D5956B /* MockAPIClient.swift */,
+				7E71C6692CB425D0006EEF9C /* MockUserEndpointFactory.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -299,6 +307,23 @@
 				7E017F2E2CB29FDA00D0D77E /* GithubAPIConfig.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		7E71C65D2CB3F77E006EEF9C /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				7E71C65E2CB3F789006EEF9C /* Mock */,
+				7E71C6672CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		7E71C65E2CB3F789006EEF9C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				7E71C65F2CB3F795006EEF9C /* MockUserDetailStorage.swift */,
+			);
+			name = Mock;
 			sourceTree = "<group>";
 		};
 		7E71C6622CB40685006EEF9C /* UserListStorage */ = {
@@ -852,7 +877,10 @@
 				7E71C6512CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift in Sources */,
 				7E71C65A2CB3ED1A006EEF9C /* MockUserDetailRepository.swift in Sources */,
 				7E71C6562CB3DF43006EEF9C /* MockAPIClient.swift in Sources */,
+				7E71C6682CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift in Sources */,
 				7E71C65C2CB3F545006EEF9C /* FetchUserDetailByUsernameUseCaseTests.swift in Sources */,
+				7E71C6602CB3F795006EEF9C /* MockUserDetailStorage.swift in Sources */,
+				7E71C66A2CB425D0006EEF9C /* MockUserEndpointFactory.swift in Sources */,
 				7E71C6582CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
