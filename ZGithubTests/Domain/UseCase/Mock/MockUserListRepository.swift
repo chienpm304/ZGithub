@@ -10,6 +10,11 @@ import Foundation
 @testable import ZGithub
 
 final class MockUserListRepository: UserListRepository {
+    enum MockError: Error {
+        case cacheNotSet
+        case fetchNotSet
+    }
+
     var cachedUserListResult: Result<DMUserList, Error>?
     var fetchUserListResult: Result<DMUserList, Error>?
 
@@ -22,7 +27,7 @@ final class MockUserListRepository: UserListRepository {
                 throw error
             }
         }
-        return DMUserList(users: [], nextOffsetID: nil)
+        throw MockError.cacheNotSet
     }
 
     func fetchUserList(pageSize: Int, offsetBy userID: UserID) async throws -> DMUserList {
@@ -34,6 +39,6 @@ final class MockUserListRepository: UserListRepository {
                 throw error
             }
         }
-        return DMUserList(users: [], nextOffsetID: nil)
+        throw MockError.fetchNotSet
     }
 }
