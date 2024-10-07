@@ -33,6 +33,8 @@
 		7E71C6662CB406A0006EEF9C /* UserListCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6652CB406A0006EEF9C /* UserListCoreDataStorage.swift */; };
 		7E71C6682CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6672CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift */; };
 		7E71C66A2CB425D0006EEF9C /* MockUserEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6692CB425D0006EEF9C /* MockUserEndpointFactory.swift */; };
+		7E71C66C2CB42689006EEF9C /* MockUserListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C66B2CB42689006EEF9C /* MockUserListStorage.swift */; };
+		7E71C66E2CB42738006EEF9C /* DefaultListRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C66D2CB42738006EEF9C /* DefaultListRepositoryTests.swift */; };
 		7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4242CB0307B00D5956B /* Assets.xcassets */; };
 		7E86A4282CB0307B00D5956B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4272CB0307B00D5956B /* Base */; };
 		7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4322CB0307B00D5956B /* ZGithubTests.swift */; };
@@ -117,6 +119,8 @@
 		7E71C6652CB406A0006EEF9C /* UserListCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCoreDataStorage.swift; sourceTree = "<group>"; };
 		7E71C6672CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailRepositoryTests.swift; sourceTree = "<group>"; };
 		7E71C6692CB425D0006EEF9C /* MockUserEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserEndpointFactory.swift; sourceTree = "<group>"; };
+		7E71C66B2CB42689006EEF9C /* MockUserListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserListStorage.swift; sourceTree = "<group>"; };
+		7E71C66D2CB42738006EEF9C /* DefaultListRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultListRepositoryTests.swift; sourceTree = "<group>"; };
 		7E86A4182CB0307900D5956B /* ZGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E86A4242CB0307B00D5956B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E86A4272CB0307B00D5956B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 			children = (
 				7E71C65E2CB3F789006EEF9C /* Mock */,
 				7E71C6672CB418E1006EEF9C /* DefaultUserDetailRepositoryTests.swift */,
+				7E71C66D2CB42738006EEF9C /* DefaultListRepositoryTests.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				7E71C65F2CB3F795006EEF9C /* MockUserDetailStorage.swift */,
+				7E71C66B2CB42689006EEF9C /* MockUserListStorage.swift */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -870,6 +876,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E71C66E2CB42738006EEF9C /* DefaultListRepositoryTests.swift in Sources */,
 				7E71C6552CB3DEE2006EEF9C /* FetchPagingUserListUseCaseTests.swift in Sources */,
 				7E017F2A2CB294AC00D0D77E /* MockUserListRepository.swift in Sources */,
 				7E71C6532CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift in Sources */,
@@ -881,6 +888,7 @@
 				7E71C65C2CB3F545006EEF9C /* FetchUserDetailByUsernameUseCaseTests.swift in Sources */,
 				7E71C6602CB3F795006EEF9C /* MockUserDetailStorage.swift in Sources */,
 				7E71C66A2CB425D0006EEF9C /* MockUserEndpointFactory.swift in Sources */,
+				7E71C66C2CB42689006EEF9C /* MockUserListStorage.swift in Sources */,
 				7E71C6582CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
