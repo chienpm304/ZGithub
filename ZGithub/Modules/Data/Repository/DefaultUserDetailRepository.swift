@@ -11,16 +11,16 @@ import Foundation
 final class DefaultUserDetailRepository {
     private let apiClient: APIProtocol
     private let userEndpointFactory: UserEndpointFactory
-    private let userStorage: UserStorage
+    private let userDetailStorage: UserDetailStorage
 
     init(
         apiClient: APIProtocol,
         userEndpointFactory: UserEndpointFactory,
-        userStorage: UserStorage
+        userDetailStorage: UserDetailStorage
     ) {
         self.apiClient = apiClient
         self.userEndpointFactory = userEndpointFactory
-        self.userStorage = userStorage
+        self.userDetailStorage = userDetailStorage
     }
 }
 
@@ -28,14 +28,14 @@ final class DefaultUserDetailRepository {
 
 extension DefaultUserDetailRepository: UserDetailRepository {
     func getCachedUserDetail(username: String) async throws -> DMUserDetail {
-        try await userStorage.fetchUserDetail(username: username)
+        try await userDetailStorage.fetchUserDetail(username: username)
     }
 
     func fetchUserDetail(username: String) async throws -> DMUserDetail {
         let endpoint = userEndpointFactory.makeUserDetailEndpoint(username: username)
         let userDetail: UserDetailResponse = try await apiClient.request(endpoint: endpoint)
         let userDetailDomain = userDetail.toDomain()
-        try await userStorage.saveUserDetail(userDetailDomain)
+        try await userDetailStorage.saveUserDetail(userDetailDomain)
         return userDetailDomain
     }
 }

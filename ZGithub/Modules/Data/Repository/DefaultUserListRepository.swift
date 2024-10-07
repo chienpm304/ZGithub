@@ -11,16 +11,16 @@ import Foundation
 final class DefaultUserListRepository {
     private let apiClient: APIProtocol
     private let userEndpointFactory: UserEndpointFactory
-    private let userStorage: UserStorage
+    private let userListStorage: UserListStorage
 
     init(
         apiClient: APIProtocol,
         userEndpointFactory: UserEndpointFactory,
-        userStorage: UserStorage
+        userListStorage: UserListStorage
     ) {
         self.apiClient = apiClient
         self.userEndpointFactory = userEndpointFactory
-        self.userStorage = userStorage
+        self.userListStorage = userListStorage
     }
 }
 
@@ -28,14 +28,14 @@ final class DefaultUserListRepository {
 
 extension DefaultUserListRepository: UserListRepository {
     func getCachedUserList(pageSize: Int, offsetBy userID: UserID) async throws -> DMUserList {
-        try await userStorage.fetchUserList(pageSize: pageSize, offsetBy: userID)
+        try await userListStorage.fetchUserList(pageSize: pageSize, offsetBy: userID)
     }
 
     func fetchUserList(pageSize: Int, offsetBy userID: UserID) async throws -> DMUserList {
         let endpoint = userEndpointFactory.makeUserListEndpoint(pageSize: pageSize, offsetID: userID)
         let userList: UserListResponse = try await apiClient.request(endpoint: endpoint)
         let userListDomain = userList.toDomain()
-        try await userStorage.saveUserList(userListDomain)
+        try await userListStorage.saveUserList(userListDomain)
         return userListDomain
     }
 }

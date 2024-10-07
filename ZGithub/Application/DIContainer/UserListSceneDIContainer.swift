@@ -26,7 +26,7 @@ final class UserListSceneDIContainer {
 
     // MARK: Lazy Properties
 
-    lazy var userStorage: UserStorage = UserCoreDataStorage(
+    lazy var userListStorage: UserListStorage = UserListCoreDataStorage(
         coreData: dependencies.coreDataStack
     )
 
@@ -38,7 +38,7 @@ final class UserListSceneDIContainer {
     lazy var userListRepository: UserListRepository = DefaultUserListRepository(
         apiClient: dependencies.apiClient,
         userEndpointFactory: userEndpointFactory,
-        userStorage: userStorage
+        userListStorage: userListStorage
     )
 
     // MARK: Flow

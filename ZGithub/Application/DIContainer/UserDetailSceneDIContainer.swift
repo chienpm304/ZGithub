@@ -25,7 +25,7 @@ final class UserDetailSceneDIContainer {
 
     // MARK: Lazy Properties
 
-    lazy var userStorage: UserStorage = UserCoreDataStorage(
+    lazy var userDetailStorage: UserDetailStorage = UserDetailCoreDataStorage(
         coreData: dependencies.coreDataStack
     )
 
@@ -37,7 +37,7 @@ final class UserDetailSceneDIContainer {
     lazy var userDetailRepository: UserDetailRepository = DefaultUserDetailRepository(
         apiClient: dependencies.apiClient,
         userEndpointFactory: userEndpointFactory,
-        userStorage: userStorage
+        userDetailStorage: userDetailStorage
     )
 
     // MARK: Flow
