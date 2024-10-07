@@ -802,6 +802,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */,
+				7E71C6512CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
