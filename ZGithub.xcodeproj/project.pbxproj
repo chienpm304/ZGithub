@@ -24,6 +24,7 @@
 		7E71C6512CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6502CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift */; };
 		7E71C6532CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6522CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift */; };
 		7E71C6552CB3DEE2006EEF9C /* FetchPagingUserListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6542CB3DEE2006EEF9C /* FetchPagingUserListUseCaseTests.swift */; };
+		7E71C6562CB3DF43006EEF9C /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A46D2CB0323E00D5956B /* MockAPIClient.swift */; };
 		7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4242CB0307B00D5956B /* Assets.xcassets */; };
 		7E86A4282CB0307B00D5956B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4272CB0307B00D5956B /* Base */; };
 		7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4322CB0307B00D5956B /* ZGithubTests.swift */; };
@@ -33,7 +34,6 @@
 		7E86A45A2CB031A000D5956B /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A44F2CB031A000D5956B /* AppFlowCoordinator.swift */; };
 		7E86A45B2CB031A000D5956B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4502CB031A000D5956B /* SceneDelegate.swift */; };
 		7E86A4912CB0323E00D5956B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A46B2CB0323E00D5956B /* CoreDataStack.swift */; };
-		7E86A4922CB0323E00D5956B /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A46D2CB0323E00D5956B /* MockAPIClient.swift */; };
 		7E86A4932CB0323E00D5956B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A46F2CB0323E00D5956B /* APIClient.swift */; };
 		7E86A4942CB0323E00D5956B /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4702CB0323E00D5956B /* APIConfig.swift */; };
 		7E86A4952CB0323E00D5956B /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4712CB0323E00D5956B /* APIEndpoint.swift */; };
@@ -769,7 +769,6 @@
 				7E86A4972CB0323E00D5956B /* APIProtocol.swift in Sources */,
 				7E86A4932CB0323E00D5956B /* APIClient.swift in Sources */,
 				7EEC551C2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift in Sources */,
-				7E86A4922CB0323E00D5956B /* MockAPIClient.swift in Sources */,
 				7E017F0C2CB254BE00D0D77E /* UserDetailSceneDIContainer.swift in Sources */,
 				7EEC55322CB0F52500B2B867 /* UserListModel.swift in Sources */,
 				7E017F152CB2886500D0D77E /* SyncUseCase.swift in Sources */,
@@ -826,6 +825,7 @@
 				7E71C6532CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift in Sources */,
 				7E86A4332CB0307B00D5956B /* ZGithubTests.swift in Sources */,
 				7E71C6512CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift in Sources */,
+				7E71C6562CB3DF43006EEF9C /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
