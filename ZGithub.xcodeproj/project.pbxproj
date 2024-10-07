@@ -25,6 +25,7 @@
 		7E71C6532CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6522CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift */; };
 		7E71C6552CB3DEE2006EEF9C /* FetchPagingUserListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6542CB3DEE2006EEF9C /* FetchPagingUserListUseCaseTests.swift */; };
 		7E71C6562CB3DF43006EEF9C /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A46D2CB0323E00D5956B /* MockAPIClient.swift */; };
+		7E71C6582CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6572CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift */; };
 		7E71C65A2CB3ED1A006EEF9C /* MockUserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E71C6592CB3ED1A006EEF9C /* MockUserDetailRepository.swift */; };
 		7E86A4252CB0307B00D5956B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4242CB0307B00D5956B /* Assets.xcassets */; };
 		7E86A4282CB0307B00D5956B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7E86A4272CB0307B00D5956B /* Base */; };
@@ -102,6 +103,7 @@
 		7E71C6502CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatFollowCountUseCaseTests.swift; sourceTree = "<group>"; };
 		7E71C6522CB3CFD5006EEF9C /* GetCachedPagingUserListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedPagingUserListUseCaseTests.swift; sourceTree = "<group>"; };
 		7E71C6542CB3DEE2006EEF9C /* FetchPagingUserListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPagingUserListUseCaseTests.swift; sourceTree = "<group>"; };
+		7E71C6572CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedUserDetailByUsernameUseCaseTests.swift; sourceTree = "<group>"; };
 		7E71C6592CB3ED1A006EEF9C /* MockUserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDetailRepository.swift; sourceTree = "<group>"; };
 		7E86A4182CB0307900D5956B /* ZGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E86A4242CB0307B00D5956B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -831,6 +833,7 @@
 				7E71C6512CB3C8B4006EEF9C /* FormatFollowCountUseCaseTests.swift in Sources */,
 				7E71C65A2CB3ED1A006EEF9C /* MockUserDetailRepository.swift in Sources */,
 				7E71C6562CB3DF43006EEF9C /* MockAPIClient.swift in Sources */,
+				7E71C6582CB3ECFA006EEF9C /* GetCachedUserDetailByUsernameUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

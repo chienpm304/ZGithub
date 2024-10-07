@@ -10,7 +10,7 @@ import Foundation
 @testable import ZGithub
 
 final class MockUserListRepository: UserListRepository {
-    enum MockError: Error {
+    private enum MockError: Error {
         case cacheNotSet
         case fetchNotSet
     }
