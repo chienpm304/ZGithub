@@ -101,21 +101,16 @@ extension UserListViewModel {
 
     @MainActor
     private func loadUserListFromCache(_ pageSize: Int, _ offset: UserID) async throws {
-        let requestCacheInput = GetCachedPagingUserListUseCase.Input(
-            pageSize: pageSize,
-            fromUserID: offset
-        )
         let getCachedUseCase = dependencies.getCachedPagingUserListUseCaseFactory()
-        let cachedUserList = try await getCachedUseCase.execute(input: requestCacheInput)
+        let cachedUserList = try await getCachedUseCase.execute(pageSize: pageSize, fromUserID: offset)
         updateDataModel(cachedUserList)
         print("[ZGithub] loaded from cached \(cachedUserList.users.map { $0.userID })")
     }
     
     @MainActor
     private func loadUserListFromRemote(_ pageSize: Int, _ offset: UserID) async throws {
-        let fetchInput = FetchPagingUserListUseCase.Input(pageSize: pageSize, fromUserID: offset)
         let fetchUseCase = dependencies.fetchPagingUserListUseCaseFactory()
-        let remoteUserList = try await fetchUseCase.execute(input: fetchInput)
+        let remoteUserList = try await fetchUseCase.execute(pageSize: pageSize, fromUserID: offset)
         updateDataModel(remoteUserList)
         print("[ZGithub] loaded from remote \(remoteUserList.users.map { $0.userID })")
     }

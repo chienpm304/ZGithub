@@ -15,17 +15,17 @@ final class GetCachedUserDetailByUsernameUseCaseTests: XCTestCase {
         case emptyUsername
     }
 
-    private var repository: MockUserDetailRepository!
-    private var useCase: GetCachedUserDetailByUsernameUseCase!
+    private var mockRepository: MockUserDetailRepository!
+    private var useCase: DefaultGetCachedUserDetailByUsernameUseCase!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        repository = MockUserDetailRepository()
-        useCase = GetCachedUserDetailByUsernameUseCase(repository: repository)
+        mockRepository = MockUserDetailRepository()
+        useCase = DefaultGetCachedUserDetailByUsernameUseCase(repository: mockRepository)
     }
 
     override func tearDownWithError() throws {
-        repository = nil
+        mockRepository = nil
         useCase = nil
         try super.tearDownWithError()
     }
@@ -42,10 +42,10 @@ final class GetCachedUserDetailByUsernameUseCaseTests: XCTestCase {
             followers: 100,
             following: 122
         )
-        repository.cachedUserDetailResult = .success(expectedUserDetail)
+        mockRepository.cachedUserDetailResult = .success(expectedUserDetail)
 
         // When
-        let output = try await useCase.execute(input: .init(username: "username 1"))
+        let output = try await useCase.execute(username: "username 1")
 
         // Then
         XCTAssertEqual(output.userID, 1)
@@ -61,11 +61,11 @@ final class GetCachedUserDetailByUsernameUseCaseTests: XCTestCase {
 
     func test_execuute_givenInvalidUsername_expectError() async throws {
         // Given
-        repository.cachedUserDetailResult = .failure(TestError.getCache)
+        mockRepository.cachedUserDetailResult = .failure(TestError.getCache)
 
         do {
             // When
-            _ = try await useCase.execute(input: .init(username: "username"))
+            _ = try await useCase.execute(username: "username")
 
             // Then
             XCTFail("Expected error to be thrown")
@@ -77,12 +77,11 @@ final class GetCachedUserDetailByUsernameUseCaseTests: XCTestCase {
 
     func test_execute_givenEmptyUsername_expectError() async throws {
         // Given
-        repository.cachedUserDetailResult = .failure(TestError.emptyUsername)
+        mockRepository.cachedUserDetailResult = .failure(TestError.emptyUsername)
 
         do {
             // When
-            let input = GetCachedUserDetailByUsernameUseCase.Input(username: "")
-            _ = try await useCase.execute(input: input)
+            _ = try await useCase.execute(username: "")
 
             // Then
             XCTFail("Expected error to be thrown")

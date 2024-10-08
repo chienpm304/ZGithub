@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct FormatFollowCountUseCase: SyncUseCase {
-    typealias Input = Int
-    typealias Output = String
+protocol FormatFollowCountUseCase {
+    func execute(count: Int) -> String
+}
 
-    func execute(input: Input) -> Output {
-        roundedCount(input)
+struct DefaultFormatFollowCountUseCase: FormatFollowCountUseCase {
+    func execute(count: Int) -> String {
+        roundedCount(count)
     }
 
     /// Rounds down the given count to the nearest significant unit (tens, hundreds, thousands, or millions) and appends a "+".

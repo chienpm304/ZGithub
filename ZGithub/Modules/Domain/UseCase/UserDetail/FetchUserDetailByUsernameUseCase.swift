@@ -8,19 +8,18 @@
 
 import Foundation
 
-final class FetchUserDetailByUsernameUseCase: AsyncUseCase {
-    struct Input {
-        let username: String
-    }
-    typealias Output = DMUserDetail
+protocol FetchUserDetailByUsernameUseCase {
+    func execute(username: String) async throws -> DMUserDetail
+}
 
+final class DefaultFetchUserDetailByUsernameUseCase: FetchUserDetailByUsernameUseCase {
     private let repository: UserDetailRepository
 
     init(repository: UserDetailRepository) {
         self.repository = repository
     }
 
-    func execute(input: Input) async throws -> Output {
-        try await repository.fetchUserDetail(username: input.username)
+    func execute(username: String) async throws -> DMUserDetail {
+        try await repository.fetchUserDetail(username: username)
     }
 }

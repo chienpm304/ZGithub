@@ -8,23 +8,21 @@
 
 import Foundation
 
-final class FetchPagingUserListUseCase: AsyncUseCase {
-    struct Input {
-        let pageSize: Int
-        let fromUserID: UserID
-    }
-    typealias Output = DMUserList
+protocol FetchPagingUserListUseCase {
+    func execute(pageSize: Int, fromUserID: UserID) async throws -> DMUserList
+}
 
+final class DefaultFetchPagingUserListUseCase: FetchPagingUserListUseCase {
     private let repository: UserListRepository
 
     init(repository: UserListRepository) {
         self.repository = repository
     }
 
-    func execute(input: Input) async throws -> Output {
+    func execute(pageSize: Int, fromUserID: UserID) async throws -> DMUserList {
         try await repository.fetchUserList(
-            pageSize: input.pageSize,
-            offsetBy: input.fromUserID
+            pageSize: pageSize,
+            offsetBy: fromUserID
         )
     }
 }

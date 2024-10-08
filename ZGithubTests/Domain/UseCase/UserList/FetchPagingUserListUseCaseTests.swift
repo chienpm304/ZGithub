@@ -14,17 +14,17 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
         case fetch
     }
 
-    private var repository: MockUserListRepository!
-    private var useCase: FetchPagingUserListUseCase!
+    private var mockRepository: MockUserListRepository!
+    private var useCase: DefaultFetchPagingUserListUseCase!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        repository = MockUserListRepository()
-        useCase = FetchPagingUserListUseCase(repository: repository)
+        mockRepository = MockUserListRepository()
+        useCase = DefaultFetchPagingUserListUseCase(repository: mockRepository)
     }
 
     override func tearDownWithError() throws {
-        repository = nil
+        mockRepository = nil
         useCase = nil
         try super.tearDownWithError()
     }
@@ -33,11 +33,10 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
         // Given
         let expectedUser = DMUserBrief(userID: 1, username: "username1", avatarURL: "avatar1", blogURL: "blog1")
         let expectedUserList = DMUserList(users: [expectedUser])
-        repository.fetchUserListResult = .success(expectedUserList)
+        mockRepository.fetchUserListResult = .success(expectedUserList)
 
         // When
-        let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
-        let output = try await useCase.execute(input: input)
+        let output = try await useCase.execute(pageSize: 20, fromUserID: 0)
 
         // Then
         XCTAssertEqual(output.users.count, 1)
@@ -51,11 +50,10 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
         // Given
         let expectedUser = DMUserBrief(userID: 1, username: "username1", avatarURL: "avatar1", blogURL: "blog1")
         let expectedUserList = DMUserList(users: [expectedUser], nextOffsetID: 100)
-        repository.fetchUserListResult = .success(expectedUserList)
+        mockRepository.fetchUserListResult = .success(expectedUserList)
 
         // When
-        let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
-        let output = try await useCase.execute(input: input)
+        let output = try await useCase.execute(pageSize: 20, fromUserID: 0)
 
         // Then
         XCTAssertEqual(output.users.count, 1)
@@ -68,11 +66,10 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
     func test_execute_givenEmptyUserResponse_expectEmptySuccess() async throws {
         // Given
         let expectedUserList = DMUserList(users: [])
-        repository.fetchUserListResult = .success(expectedUserList)
+        mockRepository.fetchUserListResult = .success(expectedUserList)
 
         // When
-        let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
-        let output = try await useCase.execute(input: input)
+        let output = try await useCase.execute(pageSize: 20, fromUserID: 0)
 
         // Then
         XCTAssertTrue(output.users.isEmpty)
@@ -82,11 +79,10 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
     func test_execute_givenEmptyUserWithExplicitNextOffset_expectSuccess() async throws {
         // Given
         let expectedUserList = DMUserList(users: [], nextOffsetID: 13)
-        repository.fetchUserListResult = .success(expectedUserList)
+        mockRepository.fetchUserListResult = .success(expectedUserList)
 
         // When
-        let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
-        let output = try await useCase.execute(input: input)
+        let output = try await useCase.execute(pageSize: 20, fromUserID: 0)
 
         // Then
         XCTAssertTrue(output.users.isEmpty)
@@ -107,11 +103,10 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
             )
         }
         let expectedUserList = DMUserList(users: expectedUsers)
-        repository.fetchUserListResult = .success(expectedUserList)
+        mockRepository.fetchUserListResult = .success(expectedUserList)
 
         // When
-        let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
-        let output = try await useCase.execute(input: input)
+        let output = try await useCase.execute(pageSize: 20, fromUserID: 0)
 
         // Then
         XCTAssertEqual(output.users.count, 20)
@@ -121,12 +116,11 @@ final class FetchPagingUserListUseCaseTests: XCTestCase {
 
     func test_execute_givenCacheFailure_expectThrowsError() async throws {
         // Given
-        repository.fetchUserListResult = .failure(TestError.fetch)
+        mockRepository.fetchUserListResult = .failure(TestError.fetch)
 
         do {
             // When
-            let input = FetchPagingUserListUseCase.Input(pageSize: 20, fromUserID: 0)
-            _ = try await useCase.execute(input: input)
+            _ = try await useCase.execute(pageSize: 20, fromUserID: 0)
 
             // Then
             XCTFail("Expected error to be thrown")

@@ -76,14 +76,14 @@ extension UserDetailSceneDIContainer: UserDetailFlowCoordinatorDependencies {
     // MARK: UseCase
 
     func makeGetCachedUserDetailByUsernameUseCase() -> GetCachedUserDetailByUsernameUseCase {
-        GetCachedUserDetailByUsernameUseCase(repository: userDetailRepository)
+        DefaultGetCachedUserDetailByUsernameUseCase(repository: userDetailRepository)
     }
 
     func makeFetchUserDetailByUsernameUseCase() -> FetchUserDetailByUsernameUseCase {
-        FetchUserDetailByUsernameUseCase(repository: userDetailRepository)
+        DefaultFetchUserDetailByUsernameUseCase(repository: userDetailRepository)
     }
 
     func makeFormatFollowCountUseCase() -> FormatFollowCountUseCase {
-        FormatFollowCountUseCase()
+        DefaultFormatFollowCountUseCase()
     }
 }

@@ -53,7 +53,7 @@ final class UserDetailViewModel: ObservableObject {
     var formatFollowCountFactory: ((Int) -> String) {
         dependencies
             .formatFollowCountUseCaseFactory()
-            .execute(input:)
+            .execute(count:)
     }
 
     @MainActor
@@ -78,22 +78,16 @@ extension UserDetailViewModel {
 
     @MainActor
     private func loadDataFromCache() async throws {
-        let requestCacheInput = GetCachedUserDetailByUsernameUseCase.Input(
-            username: userDetail.username
-        )
         let getCachedUseCase = dependencies.getCachedUserDetailUseCaseFactory()
-        let cachedUserDetail = try await getCachedUseCase.execute(input: requestCacheInput)
+        let cachedUserDetail = try await getCachedUseCase.execute(username: userDetail.username)
         updateDataModel(with: cachedUserDetail)
         print("[ZGithub] loaded from cached \(cachedUserDetail)")
     }
 
     @MainActor
     private func loadDataFromRemote() async throws {
-        let fetchInput = FetchUserDetailByUsernameUseCase.Input(
-            username: userDetail.username
-        )
         let fetchUseCase = dependencies.fetchUserDetailUseCaseFactory()
-        let remoteUserDetail = try await fetchUseCase.execute(input: fetchInput)
+        let remoteUserDetail = try await fetchUseCase.execute(username: userDetail.username)
         updateDataModel(with: remoteUserDetail)
         print("[ZGithub] loaded from remote \(remoteUserDetail)")
     }

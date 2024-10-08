@@ -90,10 +90,10 @@ extension UserListSceneDIContainer: UserListFlowCoordinatorDependencies {
     // MARK: UseCase
 
     func makeGetCachedPagingUserListUseCase() -> GetCachedPagingUserListUseCase {
-        GetCachedPagingUserListUseCase(repository: userListRepository)
+        DefaultGetCachedPagingUserListUseCase(repository: userListRepository)
     }
 
     func makeFetchPagingUserListUseCase() -> FetchPagingUserListUseCase {
-        FetchPagingUserListUseCase(repository: userListRepository)
+        DefaultFetchPagingUserListUseCase(repository: userListRepository)
     }
 }

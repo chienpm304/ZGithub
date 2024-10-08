@@ -14,7 +14,6 @@
 		7E017F0E2CB255CE00D0D77E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F0D2CB255CE00D0D77E /* UserDetailView.swift */; };
 		7E017F102CB2836B00D0D77E /* FollowCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F0F2CB2836A00D0D77E /* FollowCountView.swift */; };
 		7E017F122CB2877300D0D77E /* FormatFollowCountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F112CB2877300D0D77E /* FormatFollowCountUseCase.swift */; };
-		7E017F152CB2886500D0D77E /* SyncUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F142CB2886500D0D77E /* SyncUseCase.swift */; };
 		7E017F232CB292DB00D0D77E /* UserListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F222CB292DB00D0D77E /* UserListRepository.swift */; };
 		7E017F252CB2930800D0D77E /* UserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F242CB2930800D0D77E /* UserDetailRepository.swift */; };
 		7E017F272CB2935C00D0D77E /* DefaultUserDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E017F262CB2935C00D0D77E /* DefaultUserDetailRepository.swift */; };
@@ -54,7 +53,6 @@
 		7E86A4A42CB032E500D5956B /* CDUser+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4A32CB032E500D5956B /* CDUser+Mapping.swift */; };
 		7E86A4AA2CB0335300D5956B /* UserDetailStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4A92CB0335300D5956B /* UserDetailStorage.swift */; };
 		7E86A4AC2CB0336400D5956B /* UserDetailCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AB2CB0336400D5956B /* UserDetailCoreDataStorage.swift */; };
-		7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */; };
 		7E86A4B02CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4AF2CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift */; };
 		7E86A4B22CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B12CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift */; };
 		7E86A4B42CB0342B00D5956B /* UserEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86A4B32CB0342B00D5956B /* UserEndpointFactory.swift */; };
@@ -101,7 +99,6 @@
 		7E017F0D2CB255CE00D0D77E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		7E017F0F2CB2836A00D0D77E /* FollowCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCountView.swift; sourceTree = "<group>"; };
 		7E017F112CB2877300D0D77E /* FormatFollowCountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatFollowCountUseCase.swift; sourceTree = "<group>"; };
-		7E017F142CB2886500D0D77E /* SyncUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUseCase.swift; sourceTree = "<group>"; };
 		7E017F222CB292DB00D0D77E /* UserListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRepository.swift; sourceTree = "<group>"; };
 		7E017F242CB2930800D0D77E /* UserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRepository.swift; sourceTree = "<group>"; };
 		7E017F262CB2935C00D0D77E /* DefaultUserDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserDetailRepository.swift; sourceTree = "<group>"; };
@@ -144,7 +141,6 @@
 		7E86A4A32CB032E500D5956B /* CDUser+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUser+Mapping.swift"; sourceTree = "<group>"; };
 		7E86A4A92CB0335300D5956B /* UserDetailStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailStorage.swift; sourceTree = "<group>"; };
 		7E86A4AB2CB0336400D5956B /* UserDetailCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCoreDataStorage.swift; sourceTree = "<group>"; };
-		7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUseCase.swift; sourceTree = "<group>"; };
 		7E86A4AF2CB0339A00D5956B /* GetCachedPagingUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedPagingUserListUseCase.swift; sourceTree = "<group>"; };
 		7E86A4B12CB033A200D5956B /* GetCachedUserDetailByUsernameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedUserDetailByUsernameUseCase.swift; sourceTree = "<group>"; };
 		7E86A4B32CB0342B00D5956B /* UserEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpointFactory.swift; sourceTree = "<group>"; };
@@ -192,15 +188,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E017F132CB2885B00D0D77E /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				7E86A4AD2CB0339100D5956B /* AsyncUseCase.swift */,
-				7E017F142CB2886500D0D77E /* SyncUseCase.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		7E017F162CB2911D00D0D77E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,7 +453,6 @@
 		7E86A4692CB0323E00D5956B /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				7E017F132CB2885B00D0D77E /* Base */,
 				7EEC551E2CB0F21800B2B867 /* UserDetail */,
 				7EEC551D2CB0F21200B2B867 /* UserList */,
 			);
@@ -825,7 +811,6 @@
 				7EEC551C2CB0F1C000B2B867 /* FetchUserDetailByUsernameUseCase.swift in Sources */,
 				7E017F0C2CB254BE00D0D77E /* UserDetailSceneDIContainer.swift in Sources */,
 				7EEC55322CB0F52500B2B867 /* UserListModel.swift in Sources */,
-				7E017F152CB2886500D0D77E /* SyncUseCase.swift in Sources */,
 				7E86A45B2CB031A000D5956B /* SceneDelegate.swift in Sources */,
 				7E017F102CB2836B00D0D77E /* FollowCountView.swift in Sources */,
 				7E017F122CB2877300D0D77E /* FormatFollowCountUseCase.swift in Sources */,
@@ -863,7 +848,6 @@
 				7EEC55432CB18EB100B2B867 /* UserAvatarView.swift in Sources */,
 				7E017F2D2CB29FC300D0D77E /* ImageCacheConfig.swift in Sources */,
 				7E86A4942CB0323E00D5956B /* APIConfig.swift in Sources */,
-				7E86A4AE2CB0339100D5956B /* AsyncUseCase.swift in Sources */,
 				7EEC55412CB1878C00B2B867 /* Color+Extensions.swift in Sources */,
 				7EEC551A2CB0F17800B2B867 /* FetchPagingUserListUseCase.swift in Sources */,
 				7EEC55202CB0F23200B2B867 /* UserDetailUseCaseFactory.swift in Sources */,
