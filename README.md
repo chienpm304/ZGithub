@@ -31,6 +31,14 @@ Data Layer -> Domain Layer <- Presentation
     + Data model: single CDUser entity to store the githut user info. User info in user list api actually a portion of the detail user info, so we can use a single entity to store user info.
     + Simple core data stack setup with single mainContext.
     + Read/write tasks will be executed in background queue and return to mainContext via callback/async continuation.
+    
+```
+        Repository
+     _______|_______    
+    |               |
+    v               V
+RemoteStorage  LocalStorage
+```
 
 ## Presentation layer
 - Presentation have no connection to Data layer, get data via Domain layer via use-cases.
@@ -49,15 +57,16 @@ UseCase <- ViewModel <- View
 # Development area & Discussion:
 ## Further improvement:
 
-###. Extract /Domain /Data to standalone modules for better development interation.
+### Extract /Domain /Data to standalone modules for better development interation.
 
-###. Network request:
+### Network request:
 - Currently we pull data from and public api service, so no worries about the security, but when we need to access company api, need more security network infrastructure, we can use any Networking library like Alamofier or Moya and simply write adapters to connect 3th networking with current networking logic simple via conformming the `APIProtocol`.
 - Currently I didn't handle network monitoring and retry fetch user list when the network is back (only can continue load more when user scroll to bottom).
 
-###. Database: 
+### Database: 
 - Can use [mogenerator](https://github.com/rentzsch/mogenerator) to generate core data entity class for fully type-safe.
-- Can apply more advanced CoreData stack pattern in case we need more complex and heavy read/write operations. E.g: persistent store <- private context <- main context <- child context.
+- Can apply more advanced CoreData stack pattern in case we need more complex and heavy read/write operations. 
+E.g: persistent store <- private context <- main context <- child context.
 - Replace the CoreData with other database like Realm simply by implement the Storage protocols.
 
 ## The potential issue of user list view
