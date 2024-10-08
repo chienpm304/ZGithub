@@ -68,28 +68,33 @@ extension UserDetailViewModel {
 
     @MainActor
     private func refreshData() async {
+        await loadDataFromCache()
+        await loadDataFromRemote()
+        print("[ZGithub] loaded detail: \(dataModel.username)")
+    }
+
+    @MainActor
+    private func loadDataFromCache() async {
         do {
-            try await loadDataFromCache()
-            try await loadDataFromRemote()
+            let getCachedUseCase = dependencies.getCachedUserDetailUseCaseFactory()
+            let cachedUserDetail = try await getCachedUseCase.execute(username: userDetail.username)
+            updateDataModel(with: cachedUserDetail)
+            print("[ZGithub] loaded from cached \(cachedUserDetail)")
         } catch {
-            print("[ZGithub] load detail: \(dataModel.username), error: \(error)")
+            print("[ZGithub] loaded from cached error: \(error)")
         }
     }
 
     @MainActor
-    private func loadDataFromCache() async throws {
-        let getCachedUseCase = dependencies.getCachedUserDetailUseCaseFactory()
-        let cachedUserDetail = try await getCachedUseCase.execute(username: userDetail.username)
-        updateDataModel(with: cachedUserDetail)
-        print("[ZGithub] loaded from cached \(cachedUserDetail)")
-    }
-
-    @MainActor
-    private func loadDataFromRemote() async throws {
-        let fetchUseCase = dependencies.fetchUserDetailUseCaseFactory()
-        let remoteUserDetail = try await fetchUseCase.execute(username: userDetail.username)
-        updateDataModel(with: remoteUserDetail)
-        print("[ZGithub] loaded from remote \(remoteUserDetail)")
+    private func loadDataFromRemote() async {
+        do {
+            let fetchUseCase = dependencies.fetchUserDetailUseCaseFactory()
+            let remoteUserDetail = try await fetchUseCase.execute(username: userDetail.username)
+            updateDataModel(with: remoteUserDetail)
+            print("[ZGithub] loaded from remote \(remoteUserDetail)")
+        } catch {
+            print("[ZGithub] loaded from remote error: \(error)")
+        }
     }
 
     @MainActor
