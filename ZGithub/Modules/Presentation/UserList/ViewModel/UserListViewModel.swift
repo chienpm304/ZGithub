@@ -74,7 +74,7 @@ final class UserListViewModel: ObservableObject {
     @MainActor
     func didTapUserListItem(_ item: UserListItemModel) {
         guard let selectedUser = dataModel.getUser(by: item.id) else {
-            assertionFailure()
+            print("selected invalid user")
             return
         }
         dependencies.actions?.didTapUser(selectedUser)
@@ -88,31 +88,37 @@ extension UserListViewModel {
     private func loadMore(pageSize: Int, offset: UserID) async {
         guard isLoading == false, hasMore else { return }
         print("[ZGithub] > start loading: \(offset)")
-        do {
-            isLoading = true
-            try await loadUserListFromCache(pageSize, offset)
-            try await loadUserListFromRemote(pageSize, offset)
-            isLoading = false
-        } catch {
-            isLoading = false
-            print("[ZGithub] load more offset: \(offset), error: \(error)")
-        }
+
+        isLoading = true
+        await loadUserListFromCache(pageSize, offset)
+        await loadUserListFromRemote(pageSize, offset)
+        isLoading = false
+
+        print("[ZGithub] - finished loading: \(dataModel.users.map { $0.userID })")
     }
 
     @MainActor
-    private func loadUserListFromCache(_ pageSize: Int, _ offset: UserID) async throws {
-        let getCachedUseCase = dependencies.getCachedPagingUserListUseCaseFactory()
-        let cachedUserList = try await getCachedUseCase.execute(pageSize: pageSize, fromUserID: offset)
-        updateDataModel(cachedUserList)
-        print("[ZGithub] loaded from cached \(cachedUserList.users.map { $0.userID })")
+    private func loadUserListFromCache(_ pageSize: Int, _ offset: UserID) async {
+        do {
+            let getCachedUseCase = dependencies.getCachedPagingUserListUseCaseFactory()
+            let cachedUserList = try await getCachedUseCase.execute(pageSize: pageSize, fromUserID: offset)
+            updateDataModel(cachedUserList)
+            print("[ZGithub] loaded from cached \(cachedUserList.users.map { $0.userID })")
+        } catch {
+            print("[ZGithub] loaded from cached error: \(error)")
+        }
     }
     
     @MainActor
-    private func loadUserListFromRemote(_ pageSize: Int, _ offset: UserID) async throws {
-        let fetchUseCase = dependencies.fetchPagingUserListUseCaseFactory()
-        let remoteUserList = try await fetchUseCase.execute(pageSize: pageSize, fromUserID: offset)
-        updateDataModel(remoteUserList)
-        print("[ZGithub] loaded from remote \(remoteUserList.users.map { $0.userID })")
+    private func loadUserListFromRemote(_ pageSize: Int, _ offset: UserID) async {
+        do {
+            let fetchUseCase = dependencies.fetchPagingUserListUseCaseFactory()
+            let remoteUserList = try await fetchUseCase.execute(pageSize: pageSize, fromUserID: offset)
+            updateDataModel(remoteUserList)
+            print("[ZGithub] loaded from remote \(remoteUserList.users.map { $0.userID })")
+        } catch {
+            print("[ZGithub] loaded from remote error: \(error)")
+        }
     }
 
     @MainActor
